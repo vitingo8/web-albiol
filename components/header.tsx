@@ -1,0 +1,372 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { Menu, X, Phone, ChevronDown, User, Lock, Globe, Laptop } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { cn } from "@/lib/utils"
+import type { Locale } from "@/lib/i18n"
+
+interface HeaderProps {
+  locale: Locale
+  onLocaleChange: (locale: Locale) => void
+}
+
+export function Header({ locale, onLocaleChange }: HeaderProps) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const nav = {
+    ca: {
+      services: "Serveis",
+      online: "Gestoria Online",
+      team: "L'Equip",
+      contact: "Contacte",
+      cta: "Demanar Cita",
+      clientArea: "Àrea Privada",
+      serviceItems: [
+        { name: "Assessoria Fiscal", href: "/serveis/fiscal" },
+        { name: "Assessoria Laboral", href: "/serveis/laboral" },
+        { name: "Comptabilitat", href: "/serveis/comptable" },
+        { name: "Autònoms", href: "/serveis/autonoms" },
+        { name: "Tràmits i Gestoria", href: "/serveis/tramits" },
+      ]
+    },
+    es: {
+      services: "Servicios",
+      online: "Gestoría Online",
+      team: "El Equipo",
+      contact: "Contacto",
+      cta: "Pedir Cita",
+      clientArea: "Área Privada",
+      serviceItems: [
+        { name: "Asesoría Fiscal", href: "/serveis/fiscal" },
+        { name: "Asesoría Laboral", href: "/serveis/laboral" },
+        { name: "Contabilidad", href: "/serveis/comptable" },
+        { name: "Autónomos", href: "/serveis/autonoms" },
+        { name: "Trámites y Gestoría", href: "/serveis/tramits" },
+      ]
+    },
+    en: {
+      services: "Services",
+      online: "Online Agency",
+      team: "Team",
+      contact: "Contact",
+      cta: "Book Appt",
+      clientArea: "Client Area",
+      serviceItems: [
+        { name: "Tax Advisory", href: "/serveis/fiscal" },
+        { name: "Labor Advisory", href: "/serveis/laboral" },
+        { name: "Accounting", href: "/serveis/comptable" },
+        { name: "Freelancers", href: "/serveis/autonoms" },
+        { name: "Admin Procedures", href: "/serveis/tramits" },
+      ]
+    },
+    fr: {
+      services: "Services",
+      online: "Agence en ligne",
+      team: "Équipe",
+      contact: "Contact",
+      cta: "Rendez-vous",
+      clientArea: "Espace Client",
+      serviceItems: [
+        { name: "Fiscalité", href: "/serveis/fiscal" },
+        { name: "Social", href: "/serveis/laboral" },
+        { name: "Comptabilité", href: "/serveis/comptable" },
+        { name: "Indépendants", href: "/serveis/autonoms" },
+        { name: "Démarches", href: "/serveis/tramits" },
+      ]
+    },
+    de: {
+      services: "Dienstleistungen",
+      online: "Online-Kanzlei",
+      team: "Team",
+      contact: "Kontakt",
+      cta: "Termin",
+      clientArea: "Kundenbereich",
+      serviceItems: [
+        { name: "Steuern", href: "/serveis/fiscal" },
+        { name: "Personal", href: "/serveis/laboral" },
+        { name: "Buchhaltung", href: "/serveis/comptable" },
+        { name: "Selbstständige", href: "/serveis/autonoms" },
+        { name: "Behörden", href: "/serveis/tramits" },
+      ]
+    },
+  }
+
+  const t = nav[locale] ?? nav["ca"]
+
+  return (
+    <header
+      className={cn(
+        "fixed top-0 w-full z-50 transition-all duration-300 border-b",
+        isScrolled
+          ? "bg-background/90 backdrop-blur-md border-border/50 shadow-sm py-3"
+          : "bg-transparent border-transparent py-5"
+      )}
+    >
+      <div className="w-full px-6 md:px-10 flex items-center justify-between">
+        
+        {/* LOGO */}
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="flex flex-col">
+            <span
+              className={cn(
+                "font-serif text-lg font-bold leading-none tracking-tight",
+                isScrolled ? "text-foreground" : "text-foreground md:text-white"
+              )}
+            >
+              Albiol
+            </span>
+            <span
+              className={cn(
+                "text-[10px] uppercase tracking-widest opacity-80",
+                isScrolled ? "text-muted-foreground" : "text-muted-foreground md:text-white/80"
+              )}
+            >
+              Consultors
+            </span>
+          </div>
+        </Link>
+
+        {/* DESKTOP MENU */}
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {/* Selector Serveis */}
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                "flex items-center gap-1 text-sm font-medium transition-colors outline-none px-3 py-1.5 rounded-full hover:bg-[#ddb042] hover:text-white",
+                isScrolled ? "text-foreground" : "text-white"
+              )}
+            >
+              {t.services} <ChevronDown className="h-4 w-4 opacity-50" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="start"
+              className="w-56 p-2 bg-background/95 backdrop-blur-xl border-border/50 shadow-xl rounded-xl"
+            >
+              {t.serviceItems.map((item) => (
+                <DropdownMenuItem
+                  key={item.href}
+                  asChild
+                  className="cursor-pointer rounded-lg focus:bg-[#ddb042] focus:text-white hover:bg-[#ddb042] hover:text-white"
+                >
+                  <Link href={item.href} className="w-full font-medium">
+                    {item.name}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Gestoria Online */}
+          <Link
+            href="/gestoria-online"
+            className={cn(
+              "flex items-center gap-2 text-sm font-bold transition-all px-3 py-1.5 rounded-full border",
+              isScrolled
+                ? "bg-[#ddb042]/10 text-[#ddb042] border-[#ddb042]/30 hover:bg-[#ddb042] hover:text-white"
+                : "bg-white/5 text-[#ddb042] border-[#ddb042]/40 hover:bg-[#ddb042] hover:text-white"
+            )}
+          >
+            <Laptop className="h-4 w-4" />
+            {t.online}
+          </Link>
+
+          {/* Enlaces texto con hover gold */}
+          <Link
+            href="/nosaltres"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-[#ddb042]",
+              isScrolled ? "text-foreground" : "text-white"
+            )}
+          >
+            {t.team}
+          </Link>
+
+          <Link
+            href="/contacte"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-[#ddb042]",
+              isScrolled ? "text-foreground" : "text-white"
+            )}
+          >
+            {t.contact}
+          </Link>
+        </nav>
+
+        {/* RIGHT ACTIONS (Desktop) */}
+        <div className="hidden lg:flex items-center gap-4">
+          <Button
+            variant="ghost"
+            size="sm"
+            asChild
+            className={cn(
+              "gap-2 font-medium transition-colors",
+              isScrolled
+                ? "text-muted-foreground hover:text-[#ddb042] hover:bg-muted"
+                : "text-white/90 hover:text-[#ddb042] hover:bg-white/5"
+            )}
+          >
+            <Link href="/area-privada">
+              <User className="h-4 w-4" />
+              {t.clientArea}
+            </Link>
+          </Button>
+
+          <div className={cn("h-4 w-px mx-1", isScrolled ? "bg-border" : "bg-white/20")} />
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="sm"
+                className={cn(
+                  "gap-1 px-2 transition-colors hover:text-[#ddb042]",
+                  isScrolled ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10"
+                )}
+              >
+                <Globe className="h-4 w-4" />
+                <span className="uppercase text-xs">{locale}</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="end"
+              className="w-32 bg-background border-border shadow-lg rounded-xl"
+            >
+              {(["ca", "es", "en", "fr", "de"] as const).map((l) => (
+                <DropdownMenuItem
+                  key={l}
+                  onClick={() => onLocaleChange(l)}
+                  className={cn(
+                    "cursor-pointer justify-center font-medium hover:bg-[#ddb042] hover:text-white focus:bg-[#ddb042] focus:text-white",
+                    locale === l && "bg-muted"
+                  )}
+                >
+                  {l === "ca"
+                    ? "Català"
+                    : l === "es"
+                    ? "Español"
+                    : l === "en"
+                    ? "English"
+                    : l === "fr"
+                    ? "Français"
+                    : "Deutsch"}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Button
+            size="sm"
+            asChild
+            className={cn(
+              "font-medium shadow-md transition-transform hover:scale-105",
+              isScrolled ? "bg-primary text-primary-foreground" : "bg-white text-primary hover:bg-slate-100"
+            )}
+          >
+            <Link href="/contacte">{t.cta}</Link>
+          </Button>
+        </div>
+
+        {/* MOBILE TOGGLE */}
+        <button
+          className={cn("lg:hidden p-2", isScrolled ? "text-foreground" : "text-white")}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+
+      {/* MOBILE MENU OVERLAY */}
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-background border-b border-border shadow-xl p-4 lg:hidden flex flex-col gap-4 animate-in slide-in-from-top-2">
+          <Link
+            href="/area-privada"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center gap-2 text-sm font-bold text-primary bg-primary/5 hover:bg-primary/10 transition-colors py-3 px-4 rounded-lg border border-primary/10"
+          >
+            <Lock className="h-4 w-4" />
+            {t.clientArea}
+          </Link>
+
+          <div className="flex flex-col space-y-1">
+            <p className="px-4 py-2 text-xs font-bold text-muted-foreground uppercase tracking-wider">
+              {t.services}
+            </p>
+            {t.serviceItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-3 rounded-lg text-sm font-medium transition-colors hover:bg-[#ddb042] hover:text-white"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          <div className="h-px bg-border my-1" />
+
+          <Link
+            href="/gestoria-online"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#ddb042]/10 text-[#ddb042] font-bold text-sm transition-colors hover:bg-[#ddb042] hover:text-white"
+          >
+            <Laptop className="h-5 w-5" />
+            {t.online}
+          </Link>
+
+          <Link
+            href="/nosaltres"
+            onClick={() => setIsOpen(false)}
+            className="px-4 py-3 font-medium rounded-lg transition-colors hover:bg-[#ddb042] hover:text-white"
+          >
+            {t.team}
+          </Link>
+          <Link
+            href="/contacte"
+            onClick={() => setIsOpen(false)}
+            className="px-4 py-3 font-medium rounded-lg transition-colors hover:bg-[#ddb042] hover:text-white"
+          >
+            {t.contact}
+          </Link>
+
+          <div className="flex gap-2 pt-2">
+            {(["ca", "es", "en", "fr", "de"] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => {
+                  onLocaleChange(l)
+                  setIsOpen(false)
+                }}
+                className={cn(
+                  "flex-1 py-2 text-xs font-bold uppercase rounded-md border",
+                  locale === l
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-background border-border text-muted-foreground"
+                )}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </header>
+  )
+}
