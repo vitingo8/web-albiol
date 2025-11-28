@@ -173,7 +173,9 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
               "gap-2 font-medium transition-colors",
               isGestoriaOnlinePage
                 ? "text-slate-950 hover:text-white hover:bg-white/10"
-                : "text-white hover:text-[#ddb042] hover:bg-white/10"
+                : isScrolled
+                  ? "text-foreground hover:text-[#ddb042] hover:bg-muted"
+                  : "text-white hover:text-[#ddb042] hover:bg-white/10"
             )}
           >
             <Link href="/area-privada">
