@@ -63,9 +63,9 @@ export function WhyUsSection({ locale }: WhyUsSectionProps) {
             <span className="inline-block text-sm font-medium text-secondary uppercase tracking-widest mb-4">
               {locale === "ca" ? "Per què nosaltres" : locale === "es" ? "Por qué nosotros" : "Why us"}
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">{t.why.title}</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">{t.why.title}</h2>
 
-            <div className="grid gap-6 mt-8">
+            <div className="grid gap-6 mt-6">
               {features.map((feature) => (
                 <div key={feature.title} className="flex gap-4">
                   <div className="shrink-0 w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-[#ddb042]">
