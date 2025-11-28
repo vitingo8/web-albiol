@@ -63,10 +63,10 @@ export function HeroSection({ locale }: HeroSectionProps) {
   const c = t ?? heroContent["en"]
 
   return (
-    <section className="relative min-h-[95vh] flex items-center bg-slate-950 overflow-hidden pt-24 pb-12 lg:pt-24 lg:pb-14">
-      {/* Decoración de fondo con acento dorado */}
-      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#ddb042]/20 rounded-full blur-[120px] opacity-60 pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#ddb042]/10 rounded-full blur-[120px] opacity-60 pointer-events-none" />
+    <section className="relative min-h-[95vh] flex items-center bg-primary overflow-hidden pt-24 pb-12 lg:pt-24 lg:pb-14">
+      {/* Decoración de fondo con acento */}
+      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px] opacity-60 pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] opacity-60 pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-8 lg:px-12 xl:px-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -74,19 +74,19 @@ export function HeroSection({ locale }: HeroSectionProps) {
           <div className="max-w-2xl lg:pl-4 xl:pl-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
             {/* Badge Localización */}
             <div className="inline-flex items-center gap-3 mb-8">
-              <span className="h-px w-10 bg-[#ddb042]/80"></span>
-              <span className="text-[#ddb042] font-medium tracking-widest uppercase text-xs md:text-sm">
+              <span className="h-px w-10 bg-secondary/80"></span>
+              <span className="text-secondary font-medium tracking-widest uppercase text-xs md:text-sm">
                 {c.locationBadge}
               </span>
             </div>
 
             {/* Titular */}
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 text-balance">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-8 text-balance">
               {c.title}
             </h1>
 
             {/* Subtítulo */}
-            <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-lg font-light">
+            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-10 max-w-lg font-light">
               {c.subtitle}
             </p>
 
@@ -95,7 +95,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
               <Button
                 asChild
                 size="lg"
-                className="h-14 px-8 text-lg bg-white text-slate-950 hover:bg-slate-200 font-semibold rounded-full shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all hover:scale-105"
+                className="h-14 px-8 text-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold rounded-full shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all hover:scale-105"
               >
                 <Link href="/contacte">
                   {c.ctaPrimary}
@@ -106,7 +106,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
                 size="lg"
                 variant="link"
                 asChild
-                className="h-14 px-8 text-lg text-white hover:text-[#ddb042] underline-offset-4 group"
+                className="h-14 px-8 text-lg text-primary-foreground hover:text-secondary underline-offset-4 group"
               >
                 <Link href="/gestoria-online">
                   {c.ctaSecondary}
@@ -119,7 +119,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
 
           {/* Columna derecha: imagen */}
           <div className="relative h-[500px] lg:h-[650px] w-full hidden lg:block animate-in fade-in slide-in-from-right-12 duration-1000 delay-200">
-            <div className="absolute inset-0 bg-slate-800 rounded-[30px_30px_200px_30px] overflow-hidden border border-slate-700/50 shadow-2xl">
+            <div className="absolute inset-0 bg-card rounded-[30px_30px_200px_30px] overflow-hidden border border-border/50 shadow-2xl">
               <Image
                 src="/professional-office-tortosa-spain-business-meeting.jpg"
                 alt="Equip Albiol Consultors"
@@ -127,20 +127,20 @@ export function HeroSection({ locale }: HeroSectionProps) {
                 className="object-cover opacity-90 hover:scale-105 transition-transform duration-[2s]"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
             </div>
 
-            {/* Badge flotante con acento dorado */}
-            <div className="absolute bottom-12 -left-12 bg-slate-900/95 backdrop-blur-xl p-6 rounded-2xl border border-slate-700/50 shadow-xl max-w-xs animate-in zoom-in duration-700 delay-500">
+            {/* Badge flotante con acento */}
+            <div className="absolute bottom-12 -left-12 bg-card/95 backdrop-blur-xl p-6 rounded-2xl border border-border/50 shadow-xl max-w-xs animate-in zoom-in duration-700 delay-500">
               <div className="flex gap-4 items-center">
-                <div className="bg-[#ddb042]/20 p-3 rounded-full text-[#ddb042]">
+                <div className="bg-secondary/20 p-3 rounded-full text-secondary">
                   <CheckCircle2 className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-white font-bold text-lg leading-none mb-1">
+                  <p className="text-card-foreground font-bold text-lg leading-none mb-1">
                     {c.floatingBadge.title}
                   </p>
-                  <p className="text-slate-400 text-sm leading-tight">
+                  <p className="text-muted-foreground text-sm leading-tight">
                     {c.floatingBadge.desc}
                   </p>
                 </div>
