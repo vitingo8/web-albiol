@@ -129,7 +129,7 @@ export default function GuiaFiscalTortosaPage() {
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0" />
-                      <span>Nuevos tipos para viviendas > 600.000€</span>
+                      <span>Nuevos tipos para viviendas &gt; 600.000€</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0" />

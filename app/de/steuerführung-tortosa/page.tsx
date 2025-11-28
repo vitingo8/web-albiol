@@ -129,7 +129,7 @@ export default function SteuerführungTortosaPage() {
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0" />
-                      <span>Neue Sätze für Immobilien > 600.000€</span>
+                      <span>Neue Sätze für Immobilien &gt; 600.000€</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0" />

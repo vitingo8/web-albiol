@@ -129,7 +129,7 @@ export default function FiscalGuideTortosaPage() {
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0" />
-                      <span>New rates for homes > €600,000</span>
+                      <span>New rates for homes &gt; €600,000</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0" />

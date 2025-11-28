@@ -129,7 +129,7 @@ export default function GuideFiscaleTortosaPage() {
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0" />
-                      <span>Nouveaux taux pour biens > 600.000€</span>
+                      <span>Nouveaux taux pour biens &gt; 600.000€</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0" />
