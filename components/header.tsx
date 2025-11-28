@@ -143,7 +143,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
                   ? "text-slate-950"
                   : isScrolled
                     ? "text-foreground"
-                    : "text-foreground md:text-white"
+                    : "text-white"
               )}
             >
               Albiol
@@ -155,13 +155,33 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
                   ? "text-slate-950/80"
                   : isScrolled
                     ? "text-muted-foreground"
-                    : "text-muted-foreground md:text-white/80"
+                    : "text-white/80"
               )}
             >
               Consultors
             </span>
           </div>
         </Link>
+
+        {/* MOBILE AREA PRIVADA - Always visible */}
+        <div className="lg:hidden">
+          <Button
+            variant="ghost"
+            size="sm"
+            asChild
+            className={cn(
+              "gap-2 font-medium transition-colors",
+              isGestoriaOnlinePage
+                ? "text-slate-950 hover:text-white hover:bg-white/10"
+                : "text-white hover:text-[#ddb042] hover:bg-white/10"
+            )}
+          >
+            <Link href="/area-privada">
+              <User className="h-4 w-4" />
+              <span className="text-sm">{t.clientArea}</span>
+            </Link>
+          </Button>
+        </div>
 
         {/* DESKTOP MENU */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -368,15 +388,6 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
       {/* MOBILE MENU OVERLAY */}
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-background border-b border-border shadow-xl p-4 lg:hidden flex flex-col gap-4 animate-in slide-in-from-top-2">
-          <Link
-            href="/area-privada"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center justify-center gap-2 text-sm font-bold text-primary bg-primary/5 hover:bg-primary/10 transition-colors py-3 px-4 rounded-lg border border-primary/10"
-          >
-            <Lock className="h-4 w-4" />
-            {t.clientArea}
-          </Link>
-
           <div className="flex flex-col space-y-1">
             <p className="px-4 py-2 text-xs font-bold text-muted-foreground uppercase tracking-wider">
               {t.services}
