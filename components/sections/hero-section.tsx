@@ -15,11 +15,6 @@ const heroContent = {
     ctaPrimary: "Demanar primera cita",
     ctaSecondary: "Serveis Online",
     floatingBadge: { title: "Tràmits en 24h", desc: "Agilitat garantida" },
-    stats: [
-      { value: "+20", label: "Anys d'experiència" },
-      { value: "500+", label: "Clients satisfets" },
-      { value: "24h", label: "Resposta garantida" },
-    ],
   },
   es: {
     locationBadge: "Tortosa · Terres de l'Ebre",
@@ -29,11 +24,6 @@ const heroContent = {
     ctaPrimary: "Pedir primera cita",
     ctaSecondary: "Servicios Online",
     floatingBadge: { title: "Trámites en 24h", desc: "Agilidad garantizada" },
-    stats: [
-      { value: "+20", label: "Años de experiencia" },
-      { value: "500+", label: "Clientes satisfechos" },
-      { value: "24h", label: "Respuesta garantizada" },
-    ],
   },
   en: {
     locationBadge: "Tortosa · Spain",
@@ -43,11 +33,6 @@ const heroContent = {
     ctaPrimary: "Book appointment",
     ctaSecondary: "Online Services",
     floatingBadge: { title: "24h Processing", desc: "Speed guaranteed" },
-    stats: [
-      { value: "+20", label: "Years of experience" },
-      { value: "500+", label: "Satisfied clients" },
-      { value: "24h", label: "Guaranteed response" },
-    ],
   },
   fr: {
     locationBadge: "Tortosa · Espagne",
@@ -57,11 +42,6 @@ const heroContent = {
     ctaPrimary: "Prendre rendez-vous",
     ctaSecondary: "Services en ligne",
     floatingBadge: { title: "Traitement 24h", desc: "Rapidité garantie" },
-    stats: [
-      { value: "+20", label: "Années d'expérience" },
-      { value: "500+", label: "Clients satisfaits" },
-      { value: "24h", label: "Réponse garantie" },
-    ],
   },
   de: {
     locationBadge: "Tortosa · Spanien",
@@ -71,11 +51,6 @@ const heroContent = {
     ctaPrimary: "Termin vereinbaren",
     ctaSecondary: "Online-Dienste",
     floatingBadge: { title: "24h Bearbeitung", desc: "Schnelligkeit garantiert" },
-    stats: [
-      { value: "+20", label: "Jahre Erfahrung" },
-      { value: "500+", label: "Zufriedene Kunden" },
-      { value: "24h", label: "Garantiere Antwort" },
-    ],
   },
 } as const
 
@@ -140,17 +115,6 @@ export function HeroSection({ locale }: HeroSectionProps) {
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="flex flex-wrap items-center gap-x-12 gap-y-6 border-t border-slate-800 pt-8">
-              {c.stats.map((stat, idx) => (
-                <div key={idx}>
-                  <p className="text-3xl font-serif font-bold text-white mb-1">{stat.value}</p>
-                  <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Columna derecha: imagen */}
