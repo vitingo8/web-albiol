@@ -14,6 +14,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageCircle } from "lucide-react"
 import type { Locale } from "@/lib/i18n"
 import { getTranslation } from "@/lib/i18n"
+import { Breadcrumb } from "@/components/breadcrumb"
 
 export default function ContactClient() {
   const [locale, setLocale] = useState<Locale>("ca")
@@ -28,10 +29,19 @@ export default function ContactClient() {
 
   const googleMapsUrl = "https://www.google.com/maps/place/Carrer+Argentina,+9,+43500+Tortosa,+Tarragona,+Spain"
 
+  const breadcrumbItems = [
+    { label: locale === "ca" ? "Contacte" : locale === "es" ? "Contacto" : "Contact" }
+  ]
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header locale={locale} onLocaleChange={setLocale} />
       <main className="flex-1">
+        {/* Breadcrumb */}
+        <div className="container mx-auto px-6 md:px-8 lg:px-12 pt-8">
+          <Breadcrumb items={breadcrumbItems} locale={locale} />
+        </div>
+
         {/* Hero Section */}
         <section className="py-20 md:py-28 bg-primary text-primary-foreground relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />

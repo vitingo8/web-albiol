@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/sections/hero-section"
@@ -13,10 +12,10 @@ import { BlogPreviewSection } from "@/components/sections/blog-preview-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { CtaSection } from "@/components/sections/cta-section"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import type { Locale } from "@/lib/i18n"
+import { useLocale } from "@/hooks/use-locale"
 
 export default function HomePage() {
-  const [locale, setLocale] = useState<Locale>("ca")
+  const [locale, setLocale] = useLocale()
 
   return (
     <div className="min-h-screen flex flex-col">

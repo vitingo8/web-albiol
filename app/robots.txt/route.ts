@@ -22,6 +22,12 @@ Allow: /fons-transicio-nuclear
 Allow: /blog
 Allow: /area-privada
 
+# Páginas de contenido SEO
+Allow: /guia-fiscal-tortosa
+Allow: /alta-autonomo-tortosa
+Allow: /recursos-fiscals
+Allow: /directori-empreses-tortosa
+
 # Archivos importantes para SEO
 Allow: /sitemap.xml
 

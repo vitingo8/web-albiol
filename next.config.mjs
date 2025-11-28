@@ -1,3 +1,5 @@
+import withPWA from '@ducanh2912/next-pwa'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
@@ -9,6 +11,21 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
   },
+  experimental: {
+    optimizeCss: true,
+  },
+  // Configuración Turbopack compatible
+  turbopack: {},
 }
 
-export default nextConfig
+export default withPWA({
+  dest: 'public',
+  cacheOnFrontEndNav: true,
+  aggressiveFrontEndNavCaching: true,
+  reloadOnOnline: true,
+  swcMinify: true,
+  disable: process.env.NODE_ENV === 'development',
+  workboxOptions: {
+    disableDevLogs: true,
+  },
+})(nextConfig)

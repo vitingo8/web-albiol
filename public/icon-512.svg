@@ -1,0 +1,46 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ddb042;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8943a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="512" height="512" fill="url(#bgGradient512)" rx="96"/>
+
+  <!-- Shadow effect -->
+  <ellipse cx="256" cy="440" rx="160" ry="32" fill="#000000" opacity="0.1"/>
+
+  <!-- Calculator icon (representing accounting) -->
+  <g transform="translate(128, 140)">
+    <!-- Calculator body -->
+    <rect x="0" y="0" width="256" height="232" rx="24" fill="white" opacity="0.95"/>
+    <rect x="8" y="8" width="240" height="216" rx="16" fill="white"/>
+
+    <!-- Screen -->
+    <rect x="32" y="32" width="192" height="64" rx="8" fill="#f8f9fa"/>
+    <rect x="36" y="36" width="184" height="56" rx="4" fill="#e9ecef"/>
+    <text x="128" y="68" font-family="Arial, sans-serif" font-size="24" fill="#6c757d" text-anchor="middle">Albiol</text>
+
+    <!-- Buttons grid -->
+    <g fill="#495057">
+      <!-- Row 1 -->
+      <circle cx="64" cy="128" r="16"/>
+      <circle cx="128" cy="128" r="16"/>
+      <circle cx="192" cy="128" r="16"/>
+      <!-- Row 2 -->
+      <circle cx="64" cy="176" r="16"/>
+      <circle cx="128" cy="176" r="16"/>
+      <circle cx="192" cy="176" r="16"/>
+      <!-- Row 3 -->
+      <circle cx="64" cy="224" r="16"/>
+      <circle cx="128" cy="224" r="16"/>
+      <circle cx="192" cy="224" r="16"/>
+    </g>
+
+    <!-- Plus sign on last button -->
+    <text x="192" y="230" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">+</text>
+  </g>
+</svg>

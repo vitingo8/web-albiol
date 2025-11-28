@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import type { Locale } from "@/lib/i18n"
 import { locales, getTranslation } from "@/lib/i18n"
+import { NewsletterSignup } from "@/components/newsletter-signup"
 
 interface FooterProps {
   locale: Locale
@@ -25,15 +26,6 @@ const localeNames: Record<Locale, string> = {
 
 export function Footer({ locale, onLocaleChange }: FooterProps) {
   const t = getTranslation(locale)
-  const [email, setEmail] = useState("")
-  const [subscribed, setSubscribed] = useState(false)
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubscribed(true)
-    setEmail("")
-    setTimeout(() => setSubscribed(false), 3000)
-  }
 
   const googleMapsUrl = "https://www.google.com/maps/place/Carrer+Argentina,+9,+43500+Tortosa,+Tarragona,+Spain"
   const googleMapsEmbed =
@@ -44,33 +36,14 @@ export function Footer({ locale, onLocaleChange }: FooterProps) {
       {/* Newsletter Section */}
       <div className="border-b border-primary-foreground/10">
         <div className="container mx-auto px-4 py-12">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="font-serif text-2xl font-bold mb-2">{t.footer.newsletter.title}</h3>
-              <p className="text-primary-foreground/70">{t.footer.newsletter.description}</p>
-            </div>
-            <form onSubmit={handleSubscribe} className="flex gap-3">
-              <Input
-                type="email"
-                placeholder={t.footer.newsletter.placeholder}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/50 h-12"
-              />
-              <Button
-                type="submit"
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground h-12 px-6 shrink-0"
-              >
-                {subscribed ? t.footer.newsletter.subscribed : <ArrowRight className="h-4 w-4" />}
-              </Button>
-            </form>
+          <div className="max-w-4xl mx-auto">
+            <NewsletterSignup locale={locale} compact={true} />
           </div>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
@@ -158,6 +131,49 @@ export function Footer({ locale, onLocaleChange }: FooterProps) {
             </ul>
           </div>
 
+          {/* Recursos */}
+          <div className="space-y-4">
+            <h4 className="font-serif text-lg font-semibold">Recursos Fiscals</h4>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link
+                  href="/guia-fiscal-tortosa"
+                  className="opacity-80 hover:opacity-100 hover:text-secondary transition-all flex items-center gap-2 group"
+                >
+                  <ArrowRight className="h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  <span>Guia Fiscal Tortosa</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/alta-autonomo-tortosa"
+                  className="opacity-80 hover:opacity-100 hover:text-secondary transition-all flex items-center gap-2 group"
+                >
+                  <ArrowRight className="h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  <span>Alta Autònom</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/directori-empreses-tortosa"
+                  className="opacity-80 hover:opacity-100 hover:text-secondary transition-all flex items-center gap-2 group"
+                >
+                  <ArrowRight className="h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  <span>Directori Empreses</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/recursos-fiscals"
+                  className="opacity-80 hover:opacity-100 hover:text-secondary transition-all flex items-center gap-2 group"
+                >
+                  <ArrowRight className="h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  <span>Recursos Fiscals</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact Info - Updated with real address */}
           <div className="space-y-4">
             <h4 className="font-serif text-lg font-semibold">{t.nav.contact}</h4>
@@ -230,7 +246,13 @@ export function Footer({ locale, onLocaleChange }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href="/cookies"
+                  href={
+                    locale === "ca" ? "/politica-de-cookies" :
+                    locale === "es" ? "/es/politica-de-cookies" :
+                    locale === "en" ? "/en/cookie-policy" :
+                    locale === "fr" ? "/fr/politique-de-cookies" :
+                    "/de/cookie-richtlinie"
+                  }
                   className="opacity-80 hover:opacity-100 hover:text-secondary transition-all flex items-center gap-2 group"
                 >
                   <ArrowRight className="h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />

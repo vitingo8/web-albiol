@@ -24,6 +24,12 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const isGestoriaOnlinePage = pathname === "/gestoria-online"
+  const isResourcePage = ["/guia-fiscal-tortosa", "/alta-autonomo-tortosa", "/directori-empreses-tortosa", "/recursos-fiscals"].includes(pathname)
+  const isLegalPage = [
+    "/privacitat", "/es/privacidad", "/en/privacy", "/fr/confidentialite", "/de/datenschutz",
+    "/avis-legal", "/es/avis-legal", "/en/legal-notice", "/fr/mentions-legales", "/de/impressum",
+    "/politica-de-cookies", "/es/politica-de-cookies", "/en/cookie-policy", "/fr/politique-de-cookies", "/de/cookie-richtlinie"
+  ].includes(pathname)
   
   useEffect(() => {
     const handleScroll = () => {
@@ -48,6 +54,13 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
         { name: "Comptabilitat", href: "/serveis/comptable" },
         { name: "Autònoms", href: "/serveis/autonomos" },
         { name: "Tràmits i Gestoria", href: "/serveis/tramits" },
+      ],
+      resources: "Recursos",
+      resourceItems: [
+        { name: "Guia Fiscal Tortosa", href: "/guia-fiscal-tortosa" },
+        { name: "Alta Autònom", href: "/alta-autonomo-tortosa" },
+        { name: "Directori Empreses", href: "/directori-empreses-tortosa" },
+        { name: "Recursos Fiscals", href: "/recursos-fiscals" },
       ]
     },
     es: {
@@ -64,6 +77,13 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
         { name: "Contabilidad", href: "/serveis/comptable" },
         { name: "Autónomos", href: "/serveis/autonomos" },
         { name: "Trámites y Gestoría", href: "/serveis/tramits" },
+      ],
+      resources: "Recursos",
+      resourceItems: [
+        { name: "Guía Fiscal Tortosa", href: "/guia-fiscal-tortosa" },
+        { name: "Alta de Autónomo", href: "/alta-autonomo-tortosa" },
+        { name: "Directorio Empresas", href: "/directori-empreses-tortosa" },
+        { name: "Recursos Fiscales", href: "/recursos-fiscals" },
       ]
     },
     en: {
@@ -80,6 +100,13 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
         { name: "Accounting", href: "/serveis/comptable" },
         { name: "Freelancers", href: "/serveis/autonomos" },
         { name: "Admin Procedures", href: "/serveis/tramits" },
+      ],
+      resources: "Resources",
+      resourceItems: [
+        { name: "Fiscal Guide Tortosa", href: "/guia-fiscal-tortosa" },
+        { name: "Self-employed Registration", href: "/alta-autonomo-tortosa" },
+        { name: "Business Directory", href: "/directori-empreses-tortosa" },
+        { name: "Fiscal Resources", href: "/recursos-fiscals" },
       ]
     },
     fr: {
@@ -96,6 +123,13 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
         { name: "Comptabilité", href: "/serveis/comptable" },
         { name: "Indépendants", href: "/serveis/autonomos" },
         { name: "Démarches", href: "/serveis/tramits" },
+      ],
+      resources: "Ressources",
+      resourceItems: [
+        { name: "Guide Fiscal Tortosa", href: "/guia-fiscal-tortosa" },
+        { name: "Immatriculation Indépendant", href: "/alta-autonomo-tortosa" },
+        { name: "Annuaire Entreprises", href: "/directori-empreses-tortosa" },
+        { name: "Ressources Fiscales", href: "/recursos-fiscals" },
       ]
     },
     de: {
@@ -112,6 +146,20 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
         { name: "Buchhaltung", href: "/serveis/comptable" },
         { name: "Selbstständige", href: "/serveis/autonomos" },
         { name: "Behörden", href: "/serveis/tramits" },
+      ],
+      resources: "Ressourcen",
+      resourceItems: [
+        { name: "Steuerführer Tortosa", href: "/guia-fiscal-tortosa" },
+        { name: "Selbstständigen Anmeldung", href: "/alta-autonomo-tortosa" },
+        { name: "Unternehmensverzeichnis", href: "/directori-empreses-tortosa" },
+        { name: "Steuerliche Ressourcen", href: "/recursos-fiscals" },
+      ],
+      resources: "Recursos",
+      resourceItems: [
+        { name: "Guia Fiscal Tortosa", href: "/guia-fiscal-tortosa" },
+        { name: "Alta Autònom", href: "/alta-autonomo-tortosa" },
+        { name: "Directori Empreses", href: "/directori-empreses-tortosa" },
+        { name: "Recursos Fiscals", href: "/recursos-fiscals" },
       ]
     },
   }
@@ -126,6 +174,14 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
           ? isScrolled
             ? "bg-[#ddb042] border-white py-3 shadow-lg"
             : "bg-[#ddb042] border-white py-5 shadow-lg"
+          : isResourcePage
+          ? isScrolled
+            ? "bg-[#1e3a5f] border-white py-3 shadow-lg"
+            : "bg-[#1e3a5f] border-white py-5 shadow-lg"
+          : isLegalPage
+          ? isScrolled
+            ? "bg-[#1e3a5f] border-white py-3 shadow-lg"
+            : "bg-[#1e3a5f] border-white py-5 shadow-lg"
           : isScrolled
             ? "bg-background/90 backdrop-blur-md border-border/50 shadow-sm py-3"
             : "bg-transparent border-transparent py-5"
@@ -141,6 +197,10 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
                 "font-serif text-lg font-bold leading-none tracking-tight",
                 isGestoriaOnlinePage
                   ? "text-slate-950"
+                  : isResourcePage
+                  ? "text-white"
+                  : isLegalPage
+                  ? "text-white"
                   : isScrolled
                     ? "text-foreground"
                     : "text-white"
@@ -153,6 +213,10 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
                 "text-[10px] uppercase tracking-widest opacity-80",
                 isGestoriaOnlinePage
                   ? "text-slate-950/80"
+                  : isResourcePage
+                  ? "text-white/80"
+                  : isLegalPage
+                  ? "text-white/80"
                   : isScrolled
                     ? "text-muted-foreground"
                     : "text-white/80"
@@ -173,6 +237,10 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
               "gap-2 font-medium transition-colors",
               isGestoriaOnlinePage
                 ? "text-slate-950 hover:text-white hover:bg-white/10"
+                : isResourcePage
+                ? "text-white hover:text-[#ddb042] hover:bg-white/10"
+                : isLegalPage
+                ? "text-white hover:text-[#ddb042] hover:bg-white/10"
                 : isScrolled
                   ? "text-foreground hover:text-[#ddb042] hover:bg-muted"
                   : "text-white hover:text-[#ddb042] hover:bg-white/10"
@@ -194,9 +262,17 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
                 "flex items-center gap-1 text-sm font-medium transition-colors outline-none px-3 py-1.5 rounded-full",
                 isGestoriaOnlinePage
                   ? "text-slate-950 hover:bg-white hover:text-slate-950"
+                  : isResourcePage
+                  ? "text-white hover:bg-[#ddb042] hover:text-slate-950"
+                  : isLegalPage
+                  ? "text-white hover:bg-[#ddb042] hover:text-slate-950"
                   : "hover:bg-[#ddb042] hover:text-slate-950",
                 isGestoriaOnlinePage
                   ? "text-slate-950"
+                  : isResourcePage
+                  ? "text-white"
+                  : isLegalPage
+                  ? "text-white"
                   : isScrolled
                     ? "text-foreground"
                     : "text-white"
@@ -209,6 +285,49 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
               className="w-56 p-2 bg-background/95 backdrop-blur-xl border-border/50 shadow-xl rounded-xl"
             >
               {t.serviceItems.map((item) => (
+                <DropdownMenuItem
+                  key={item.href}
+                  asChild
+                  className="cursor-pointer rounded-lg focus:bg-[#ddb042] focus:text-white hover:bg-[#ddb042] hover:text-white"
+                >
+                  <Link href={item.href} className="w-full font-medium">
+                    {item.name}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Selector Recursos */}
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                "flex items-center gap-1 text-sm font-medium transition-colors outline-none px-3 py-1.5 rounded-full",
+                isGestoriaOnlinePage
+                  ? "text-slate-950 hover:bg-white hover:text-slate-950"
+                  : isResourcePage
+                  ? "text-white hover:bg-[#ddb042] hover:text-slate-950"
+                  : isLegalPage
+                  ? "text-white hover:bg-[#ddb042] hover:text-slate-950"
+                  : "hover:bg-[#ddb042] hover:text-slate-950",
+                isGestoriaOnlinePage
+                  ? "text-slate-950"
+                  : isResourcePage
+                  ? "text-white"
+                  : isLegalPage
+                  ? "text-white"
+                  : isScrolled
+                    ? "text-foreground"
+                    : "text-white"
+              )}
+            >
+              {t.resources} <ChevronDown className="h-4 w-4 opacity-50" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="start"
+              className="w-56 p-2 bg-background/95 backdrop-blur-xl border-border/50 shadow-xl rounded-xl"
+            >
+              {t.resourceItems.map((item) => (
                 <DropdownMenuItem
                   key={item.href}
                   asChild
@@ -259,9 +378,17 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
               "text-sm font-medium transition-colors",
               isGestoriaOnlinePage
                 ? "text-slate-950 hover:text-white"
+                : isResourcePage
+                ? "text-white hover:text-[#ddb042]"
+                : isLegalPage
+                ? "text-white hover:text-[#ddb042]"
                 : "hover:text-[#ddb042]",
               isGestoriaOnlinePage
                 ? "text-slate-950"
+                : isResourcePage
+                ? "text-white"
+                : isLegalPage
+                ? "text-white"
                 : isScrolled
                   ? "text-foreground"
                   : "text-white"
@@ -276,9 +403,17 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
               "text-sm font-medium transition-colors",
               isGestoriaOnlinePage
                 ? "text-slate-950 hover:text-white"
+                : isResourcePage
+                ? "text-white hover:text-[#ddb042]"
+                : isLegalPage
+                ? "text-white hover:text-[#ddb042]"
                 : "hover:text-[#ddb042]",
               isGestoriaOnlinePage
                 ? "text-slate-950"
+                : isResourcePage
+                ? "text-white"
+                : isLegalPage
+                ? "text-white"
                 : isScrolled
                   ? "text-foreground"
                   : "text-white"
@@ -298,9 +433,17 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
               "gap-2 font-medium transition-colors",
               isGestoriaOnlinePage
                 ? "text-slate-950 hover:text-white hover:bg-white/10"
+                : isResourcePage
+                ? "text-white hover:text-[#ddb042] hover:bg-white/10"
+                : isLegalPage
+                ? "text-white hover:text-[#ddb042] hover:bg-white/10"
                 : "hover:text-[#ddb042]",
               isGestoriaOnlinePage
                 ? "text-slate-950 hover:text-white hover:bg-white/10"
+                : isResourcePage
+                ? "text-white hover:text-[#ddb042] hover:bg-white/10"
+                : isLegalPage
+                ? "text-white hover:text-[#ddb042] hover:bg-white/10"
                 : isScrolled
                   ? "text-muted-foreground hover:text-[#ddb042] hover:bg-muted"
                   : "text-white/90 hover:text-[#ddb042] hover:bg-white/5"
@@ -312,7 +455,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
             </Link>
           </Button>
 
-          <div className={cn("h-4 w-px mx-1", isGestoriaOnlinePage ? "bg-slate-950/30" : isScrolled ? "bg-border" : "bg-white/20")} />
+          <div className={cn("h-4 w-px mx-1", isGestoriaOnlinePage ? "bg-slate-950/30" : isResourcePage ? "bg-white/30" : isLegalPage ? "bg-white/30" : isScrolled ? "bg-border" : "bg-white/20")} />
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -323,9 +466,17 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
                   "gap-1 px-2 transition-colors",
                   isGestoriaOnlinePage
                     ? "text-slate-950 hover:text-white hover:bg-white/10"
+                    : isResourcePage
+                    ? "text-white hover:text-[#ddb042] hover:bg-white/10"
+                    : isLegalPage
+                    ? "text-white hover:text-[#ddb042] hover:bg-white/10"
                     : "hover:text-[#ddb042]",
                   isGestoriaOnlinePage
                     ? "text-slate-950 hover:text-white hover:bg-white/10"
+                    : isResourcePage
+                    ? "text-white hover:text-[#ddb042] hover:bg-white/10"
+                    : isLegalPage
+                    ? "text-white hover:text-[#ddb042] hover:bg-white/10"
                     : isScrolled
                       ? "text-foreground hover:bg-muted"
                       : "text-white hover:bg-white/10"
@@ -369,6 +520,10 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
               "font-medium shadow-md transition-transform hover:scale-105",
               isGestoriaOnlinePage
                 ? "bg-slate-950 text-white hover:bg-slate-800"
+                : isResourcePage
+                ? "bg-white text-[#1e3a5f] hover:bg-slate-100"
+                : isLegalPage
+                ? "bg-white text-[#1e3a5f] hover:bg-slate-100"
                 : isScrolled
                   ? "bg-primary text-primary-foreground"
                   : "bg-white text-primary hover:bg-slate-100"
@@ -380,7 +535,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
 
         {/* MOBILE TOGGLE */}
         <button
-          className={cn("lg:hidden p-2", isGestoriaOnlinePage ? "text-slate-950" : isScrolled ? "text-foreground" : "text-white")}
+          className={cn("lg:hidden p-2", isGestoriaOnlinePage ? "text-slate-950" : isResourcePage ? "text-white" : isLegalPage ? "text-white" : isScrolled ? "text-foreground" : "text-white")}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
