@@ -39,7 +39,7 @@ export function SegmentsSection({ locale }: SegmentsSectionProps) {
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-sm font-medium text-[#ddb042] uppercase tracking-widest mb-4">
+          <span className="inline-block text-sm font-medium text-secondary uppercase tracking-widest mb-4">
             {t.segments.sectionKicker}
           </span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
@@ -64,14 +64,14 @@ export function SegmentsSection({ locale }: SegmentsSectionProps) {
               </div>
 
               <div className="p-6">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-[#ddb042]/10 text-[#ddb042] mb-4">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4">
                   {segment.icon}
                 </div>
                 <h3 className="font-serif text-2xl font-semibold text-foreground mb-3">{segment.title}</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">{segment.description}</p>
                 <Button
                   variant="outline"
-                  className="gap-2 group-hover:bg-[#ddb042] group-hover:text-slate-950 group-hover:border-[#ddb042] transition-colors bg-transparent border-[#ddb042]/30 text-[#ddb042] hover:text-slate-950"
+                  className="gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-colors bg-transparent"
                 >
                   {segment.cta}
                   <ArrowRight className="h-4 w-4" />

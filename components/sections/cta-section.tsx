@@ -25,7 +25,7 @@ export function CtaSection({ locale }: CtaSectionProps) {
             <Link href="/contacte">
               <Button
                 size="lg"
-                className="bg-[#ddb042] hover:bg-[#ddb042]/90 text-slate-950 font-medium gap-2 w-full sm:w-auto"
+                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium gap-2 w-full sm:w-auto"
               >
                 {t.cta.button}
                 <ArrowRight className="h-4 w-4" />
@@ -34,7 +34,7 @@ export function CtaSection({ locale }: CtaSectionProps) {
             <Button
               size="lg"
               variant="outline"
-              className="border-[#ddb042]/30 bg-[#ddb042]/10 text-[#ddb042] hover:bg-[#ddb042]/20 hover:text-[#ddb042] gap-2"
+              className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white gap-2"
             >
               <Phone className="h-4 w-4" />
               977 00 00 00

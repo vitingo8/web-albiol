@@ -7,7 +7,6 @@ import { HeroSection } from "@/components/sections/hero-section"
 import { ServicesSection } from "@/components/sections/services-section"
 import { StatsSection } from "@/components/sections/stats-section"
 import { WhyUsSection } from "@/components/sections/why-us-section"
-import { SegmentsSection } from "@/components/sections/segments-section"
 import { FaqSection } from "@/components/sections/faq-section"
 import { BlogPreviewSection } from "@/components/sections/blog-preview-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
@@ -28,7 +27,6 @@ export default function HomePage() {
         <ServicesSection locale={locale} />
         <StatsSection locale={locale} />
         <WhyUsSection locale={locale} />
-        <SegmentsSection locale={locale} />
         <FaqSection locale={locale} />
         <BlogPreviewSection locale={locale} />
         <TestimonialsSection locale={locale} />

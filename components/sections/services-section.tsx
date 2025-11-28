@@ -65,7 +65,7 @@ export function ServicesSection({ locale }: ServicesSectionProps) {
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-sm font-medium text-[#ddb042] uppercase tracking-widest mb-4">
+          <span className="inline-block text-sm font-medium text-secondary uppercase tracking-widest mb-4">
             {locale === "ca" ? "Què oferim" : locale === "es" ? "Qué ofrecemos" : "What we offer"}
           </span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">{t.services.title}</h2>

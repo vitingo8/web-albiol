@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { CompaniesTicker } from "@/components/companies-ticker"
 import type { Locale } from "@/lib/i18n"
 
 const heroContent = {
@@ -114,6 +115,9 @@ export function HeroSection({ locale }: HeroSectionProps) {
                 </Link>
               </Button>
             </div>
+
+            {/* Companies Ticker Animation */}
+            <CompaniesTicker />
 
           </div>
 
