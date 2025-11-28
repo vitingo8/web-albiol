@@ -249,7 +249,7 @@ export default function GestoriaOnlineClient() {
       <main className="flex-1">
         {/* HERO SECTION - ELEGANT CORPORATE (GOLD THEME) */}
         <section className="py-20 md:py-32 bg-slate-50 relative overflow-hidden">
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
               {/* Text Content */}
@@ -321,7 +321,7 @@ export default function GestoriaOnlineClient() {
 
         {/* VALUE PROPOSITION - HUMAN & TECH */}
         <section id="features" className="py-24 bg-white">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900 mb-4">{c.valuePropTitle}</h2>
               <p className="text-xl text-slate-600">{c.valuePropText}</p>
@@ -343,7 +343,7 @@ export default function GestoriaOnlineClient() {
 
         {/* COMPARISON TABLE - GOLD STYLE */}
         <section className="py-24 bg-slate-50">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
               <div className="p-8 md:p-12 text-center border-b border-slate-100">
                 <h2 className="font-serif text-3xl font-bold text-slate-900">{c.comparisonTitle}</h2>
@@ -390,7 +390,7 @@ export default function GestoriaOnlineClient() {
 
         {/* FINAL CTA - ELEGANT DARK + GOLD */}
         <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="bg-slate-900 rounded-3xl p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
               {/* Gold Glow Background */}
               <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ddb042]/10 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
