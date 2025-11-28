@@ -114,7 +114,7 @@ export default function AboutPage() {
     {
       name: "Pau Jornet Meix",
       role: locale === "ca" ? "Director de Projectes" : locale === "es" ? "Director de Proyectos" : "Project Director",
-      image: "/Pau.png",
+      image: "/pau.png",
       linkedin: "https://www.linkedin.com/in/pau-jornet-meix-344b4197/",
       bio:
         locale === "ca"
