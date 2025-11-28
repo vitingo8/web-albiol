@@ -140,7 +140,6 @@ export function HeroSection({ locale }: HeroSectionProps) {
                 className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-[2s]"
                 priority
                 sizes="(max-width: 1024px) 100vw, 650px"
-                quality={85}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
             </div>
