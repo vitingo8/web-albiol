@@ -46,7 +46,7 @@ export function WhyUsSection({ locale }: WhyUsSectionProps) {
               />
             </div>
             {/* Floating Card */}
-            <div className="absolute -bottom-6 -right-6 bg-secondary text-secondary-foreground p-6 rounded-xl shadow-lg max-w-xs hidden md:block">
+            <div className="absolute -bottom-6 -right-6 bg-[#ddb042] text-slate-950 p-6 rounded-xl shadow-lg max-w-xs hidden md:block">
               <p className="font-serif text-3xl font-bold">+20</p>
               <p className="text-sm">
                 {locale === "ca"
@@ -60,7 +60,7 @@ export function WhyUsSection({ locale }: WhyUsSectionProps) {
 
           {/* Right Column - Content */}
           <div>
-            <span className="inline-block text-sm font-medium text-secondary uppercase tracking-widest mb-4">
+            <span className="inline-block text-sm font-medium text-[#ddb042] uppercase tracking-widest mb-4">
               {locale === "ca" ? "Per què nosaltres" : locale === "es" ? "Por qué nosotros" : "Why us"}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">{t.why.title}</h2>
@@ -68,7 +68,7 @@ export function WhyUsSection({ locale }: WhyUsSectionProps) {
             <div className="grid gap-6 mt-8">
               {features.map((feature) => (
                 <div key={feature.title} className="flex gap-4">
-                  <div className="shrink-0 w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-secondary">
+                  <div className="shrink-0 w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-[#ddb042]">
                     {feature.icon}
                   </div>
                   <div>

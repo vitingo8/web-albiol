@@ -74,8 +74,8 @@ export function HeroSection({ locale }: HeroSectionProps) {
           <div className="max-w-2xl lg:pl-4 xl:pl-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
             {/* Badge Localización */}
             <div className="inline-flex items-center gap-3 mb-8">
-              <span className="h-px w-10 bg-secondary/80"></span>
-              <span className="text-secondary font-medium tracking-widest uppercase text-xs md:text-sm">
+              <span className="h-px w-10 bg-[#ddb042]/80"></span>
+              <span className="text-[#ddb042] font-medium tracking-widest uppercase text-xs md:text-sm">
                 {c.locationBadge}
               </span>
             </div>
@@ -106,7 +106,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
                 size="lg"
                 variant="link"
                 asChild
-                className="h-14 px-8 text-lg text-primary-foreground hover:text-secondary underline-offset-4 group"
+                className="h-14 px-8 text-lg text-[#ddb042] hover:text-[#ddb042]/80 underline-offset-4 group"
               >
                 <Link href="/gestoria-online">
                   {c.ctaSecondary}
@@ -133,14 +133,14 @@ export function HeroSection({ locale }: HeroSectionProps) {
             {/* Badge flotante con acento */}
             <div className="absolute bottom-12 -left-12 bg-card/95 backdrop-blur-xl p-6 rounded-2xl border border-border/50 shadow-xl max-w-xs animate-in zoom-in duration-700 delay-500">
               <div className="flex gap-4 items-center">
-                <div className="bg-secondary/20 p-3 rounded-full text-secondary">
+                <div className="bg-[#ddb042]/20 p-3 rounded-full text-[#ddb042]">
                   <CheckCircle2 className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-card-foreground font-bold text-lg leading-none mb-1">
+                  <p className="text-[#ddb042] font-bold text-lg leading-none mb-1">
                     {c.floatingBadge.title}
                   </p>
-                  <p className="text-muted-foreground text-sm leading-tight">
+                  <p className="text-card-foreground text-sm leading-tight">
                     {c.floatingBadge.desc}
                   </p>
                 </div>
