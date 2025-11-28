@@ -33,9 +33,9 @@ export function WhyUsSection({ locale }: WhyUsSectionProps) {
   ]
 
   return (
-    <section className="py-20 md:py-28 bg-primary text-primary-foreground">
+      <section className="pt-12 md:pt-16 pb-20 md:pb-28 bg-primary text-primary-foreground">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Image */}
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
