@@ -55,36 +55,42 @@ const nuclearFundCopy = {
         title: "Subvencions per a projectes d'inversió empresarial",
         text: "Subvencions per a projectes d'inversió empresarial en actius fixes que suposin la creació d'un nou establiment, la incorporació d'una nova activitat per l'empresa, una ampliació de la capacitat productiva o una millora del procés productiu.",
         details: "Intensitat de l'ajut: entre el 10% i el 60%, en funció de la mida de l'empresa i el règim europeu al qual s'aculli. Import màxim: 300.000€. Pressupost: 22.900.000€",
+        tag: "Indústries & Nau",
         icon: <Building2 className="h-6 w-6" />
       },
       {
         title: "Subvencions per a projectes de creació d'ocupació",
         text: "Subvencions per a projectes de creació d'ocupació d'un mínim de 3 nous llocs de treball.",
         details: "Intensitat de l'ajut: 50%. Import màxim: 300.000€. Pressupost: 4.000.000€",
+        tag: "Ocupació",
         icon: <Users className="h-6 w-6" />
       },
       {
         title: "Subvencions per a projectes de creixement i noves oportunitats de negoci",
         text: "Subvencions per a projectes de creixement i noves oportunitats de negoci: Línia canvi estratègic, Línia canvi estructural, Línia captació de talent.",
         details: "Intensitat de l'ajut: entre el 10% i el 75%, en funció de la tipologia de despesa i la mida d'empresa. Import màxim: 31.000€ per canvi estratègic, 210.000€ per canvi estructural i 201.000€ per captació de talent. Pressupost: 1.500.000€",
+        tag: "Estratègia & Consultoria",
         icon: <Calculator className="h-6 w-6" />
       },
       {
         title: "Subvencions per a projectes cooperatius",
         text: "Subvencions per a projectes cooperatius, entre empreses i agents de suport per millorar la competitivitat sectorial.",
         details: "Intensitat de l'ajut: 75%. Import màxim: 150.000€. Pressupost: 2.000.000€",
+        tag: "Projectes Cooperatius",
         icon: <ShieldCheck className="h-6 w-6" />
       },
       {
         title: "Subvencions per a projectes d'emprenedoria d'alt valor afegit",
         text: "Subvencions per a projectes d'emprenedoria d'alt valor afegit, incloent les actuacions relacionades amb el desenvolupament del pla de negoci de l'empresa emergent d'alt valor afegit en les seves fases inicials.",
         details: "Intensitat de l'ajut: 100%. Import màxim: 50.000€. Pressupost: 600.000€",
+        tag: "Startups",
         icon: <Calculator className="h-6 w-6" />
       },
       {
         title: "Subvencions per a projectes d'innovació tecnològica",
         text: "Subvencions per a projectes d'innovació tecnològica, propers al mercat, amb risc tecnològic mig/baix i curts períodes de recuperació de la inversió (amb TRLs 7-9), que fomentin una transformació tecnològica, digital i verda de les empreses.",
         details: "Intensitat de l'ajut: 75%. Import màxim: 150.000€. Pressupost: 4.000.000€",
+        tag: "Innovació",
         icon: <Calculator className="h-6 w-6" />
       }
     ],
@@ -145,36 +151,42 @@ const nuclearFundCopy = {
         title: "Subvenciones para proyectos de inversión empresarial",
         text: "Subvenciones para proyectos de inversión empresarial en activos fijos que supongan la creación de un nuevo establecimiento, la incorporación de una nueva actividad para la empresa, una ampliación de la capacidad productiva o una mejora del proceso productivo.",
         details: "Intensidad de la ayuda: entre el 10% y el 60%, en función del tamaño de la empresa y el régimen europeo al que se acoja. Importe máximo: 300.000€. Presupuesto: 22.900.000€",
+        tag: "Industrias & Naves",
         icon: <Building2 className="h-6 w-6" />
       },
       {
         title: "Subvenciones para proyectos de creación de ocupación",
         text: "Subvenciones para proyectos de creación de ocupación de un mínimo de 3 nuevos puestos de trabajo.",
         details: "Intensidad de la ayuda: 50%. Importe máximo: 300.000€. Presupuesto: 4.000.000€",
+        tag: "Ocupación",
         icon: <Users className="h-6 w-6" />
       },
       {
         title: "Subvenciones para proyectos de crecimiento y nuevas oportunidades de negocio",
         text: "Subvenciones para proyectos de crecimiento y nuevas oportunidades de negocio: Línea cambio estratégico, Línea cambio estructural, Línea captación de talento.",
         details: "Intensidad de la ayuda: entre el 10% y el 75%, en función de la tipología de gasto y el tamaño de empresa. Importe máximo: 31.000€ por cambio estratégico, 210.000€ por cambio estructural y 201.000€ por captación de talento. Presupuesto: 1.500.000€",
+        tag: "Estrategia & Consultoría",
         icon: <Calculator className="h-6 w-6" />
       },
       {
         title: "Subvenciones para proyectos cooperativos",
         text: "Subvenciones para proyectos cooperativos, entre empresas y agentes de apoyo para mejorar la competitividad sectorial.",
         details: "Intensidad de la ayuda: 75%. Importe máximo: 150.000€. Presupuesto: 2.000.000€",
+        tag: "Proyectos Cooperativos",
         icon: <ShieldCheck className="h-6 w-6" />
       },
       {
         title: "Subvenciones para proyectos de emprendimiento de alto valor añadido",
         text: "Subvenciones para proyectos de emprendimiento de alto valor añadido, incluyendo las actuaciones relacionadas con el desarrollo del plan de negocio de la empresa emergente de alto valor añadido en sus fases iniciales.",
         details: "Intensidad de la ayuda: 100%. Importe máximo: 50.000€. Presupuesto: 600.000€",
+        tag: "Startups",
         icon: <Calculator className="h-6 w-6" />
       },
       {
         title: "Subvenciones para proyectos de innovación tecnológica",
         text: "Subvenciones para proyectos de innovación tecnológica, próximos al mercado, con riesgo tecnológico medio/bajo y cortos períodos de recuperación de la inversión (con TRLs 7-9), que fomenten una transformación tecnológica, digital y verde de las empresas.",
         details: "Intensidad de la ayuda: 75%. Importe máximo: 150.000€. Presupuesto: 4.000.000€",
+        tag: "Innovación",
         icon: <Calculator className="h-6 w-6" />
       }
     ],
@@ -235,36 +247,42 @@ const nuclearFundCopy = {
         title: "Grants for business investment projects",
         text: "Grants for business investment projects in fixed assets that involve the creation of a new establishment, the incorporation of a new activity for the company, an expansion of production capacity or an improvement of the production process.",
         details: "Aid intensity: between 10% and 60%, depending on the size of the company and the European regime to which it subscribes. Maximum amount: 300,000€. Budget: 22,900,000€",
+        tag: "Industries & Premises",
         icon: <Building2 className="h-6 w-6" />
       },
       {
         title: "Grants for employment creation projects",
         text: "Grants for employment creation projects of a minimum of 3 new jobs.",
         details: "Aid intensity: 50%. Maximum amount: 300,000€. Budget: 4,000,000€",
+        tag: "Employment",
         icon: <Users className="h-6 w-6" />
       },
       {
         title: "Grants for growth and new business opportunity projects",
         text: "Grants for growth and new business opportunity projects: Strategic change line, Structural change line, Talent attraction line.",
         details: "Aid intensity: between 10% and 75%, depending on the type of expenditure and company size. Maximum amount: 31,000€ for strategic change, 210,000€ for structural change and 201,000€ for talent attraction. Budget: 1,500,000€",
+        tag: "Strategy & Consulting",
         icon: <Calculator className="h-6 w-6" />
       },
       {
         title: "Grants for cooperative projects",
         text: "Grants for cooperative projects, between companies and support agents to improve sector competitiveness.",
         details: "Aid intensity: 75%. Maximum amount: 150,000€. Budget: 2,000,000€",
+        tag: "Cooperative Projects",
         icon: <ShieldCheck className="h-6 w-6" />
       },
       {
         title: "Grants for high value-added entrepreneurship projects",
         text: "Grants for high value-added entrepreneurship projects, including actions related to the development of the business plan of the high value-added emerging company in its initial phases.",
         details: "Aid intensity: 100%. Maximum amount: 50,000€. Budget: 600,000€",
+        tag: "Startups",
         icon: <Calculator className="h-6 w-6" />
       },
       {
         title: "Grants for technological innovation projects",
         text: "Grants for technological innovation projects, close to market, with medium/low technological risk and short investment recovery periods (with TRLs 7-9), that promote a technological, digital and green transformation of companies.",
         details: "Aid intensity: 75%. Maximum amount: 150,000€. Budget: 4,000,000€",
+        tag: "Innovation",
         icon: <Calculator className="h-6 w-6" />
       }
     ],
@@ -325,36 +343,42 @@ const nuclearFundCopy = {
         title: "Subventions pour projets d'investissement entrepreneurial",
         text: "Subventions pour projets d'investissement entrepreneurial en actifs fixes qui supposent la création d'un nouvel établissement, l'incorporation d'une nouvelle activité pour l'entreprise, une expansion de la capacité productive ou une amélioration du processus productif.",
         details: "Intensité de l'aide : entre 10 % et 60 %, en fonction de la taille de l'entreprise et du régime européen auquel elle s'inscrit. Montant maximum : 300 000 €. Budget : 22 900 000 €",
+        tag: "Industries & Entrepôts",
         icon: <Building2 className="h-6 w-6" />
       },
       {
         title: "Subventions pour projets de création d'emplois",
         text: "Subventions pour projets de création d'emplois d'un minimum de 3 nouveaux postes de travail.",
         details: "Intensité de l'aide : 50 %. Montant maximum : 300 000 €. Budget : 4 000 000 €",
+        tag: "Emploi",
         icon: <Users className="h-6 w-6" />
       },
       {
         title: "Subventions pour projets de croissance et nouvelles opportunités d'affaires",
         text: "Subventions pour projets de croissance et nouvelles opportunités d'affaires : Ligne changement stratégique, Ligne changement structurel, Ligne attraction de talents.",
         details: "Intensité de l'aide : entre 10 % et 75 %, en fonction de la typologie de dépense et de la taille d'entreprise. Montant maximum : 31 000 € pour changement stratégique, 210 000 € pour changement structurel et 201 000 € pour attraction de talents. Budget : 1 500 000 €",
+        tag: "Stratégie & Conseil",
         icon: <Calculator className="h-6 w-6" />
       },
       {
         title: "Subventions pour projets coopératifs",
         text: "Subventions pour projets coopératifs, entre entreprises et agents de soutien pour améliorer la compétitivité sectorielle.",
         details: "Intensité de l'aide : 75 %. Montant maximum : 150 000 €. Budget : 2 000 000 €",
+        tag: "Projets Coopératifs",
         icon: <ShieldCheck className="h-6 w-6" />
       },
       {
         title: "Subventions pour projets d'entrepreneuriat à haute valeur ajoutée",
         text: "Subventions pour projets d'entrepreneuriat à haute valeur ajoutée, incluant les actions liées au développement du plan d'affaires de l'entreprise émergente à haute valeur ajoutée dans ses phases initiales.",
         details: "Intensité de l'aide : 100 %. Montant maximum : 50 000 €. Budget : 600 000 €",
+        tag: "Startups",
         icon: <Calculator className="h-6 w-6" />
       },
       {
         title: "Subventions pour projets d'innovation technologique",
         text: "Subventions pour projets d'innovation technologique, proches du marché, avec risque technologique moyen/faible et courtes périodes de récupération d'investissement (avec TRL 7-9), qui favorisent une transformation technologique, numérique et verte des entreprises.",
         details: "Intensité de l'aide : 75 %. Montant maximum : 150 000 €. Budget : 4 000 000 €",
+        tag: "Innovation",
         icon: <Calculator className="h-6 w-6" />
       }
     ],
@@ -409,27 +433,49 @@ const nuclearFundCopy = {
     municipalitiesHighlight: "Über 90 Gemeinden in Catalunya, die von der Kernenergieproduktion betroffen sind",
 
     projectsTitle: "Förderfähige Projekte",
-    projectsIntro: "Alle Projekte, die auf Energiewandel, Digitalisierung und Wirtschaftsförderung basieren, sind förderfähig:",
+    projectsIntro: "Was sind die Linien der Maßnahmen der Förderungen?",
     projects: [
       {
-        title: "Energiewandel",
-        text: "Erneuerbare Energieanlagen (Solar, Wind, Biomasse), Energieeffizienzverbesserungen und Kreislaufwirtschaftsprojekte.",
-        icon: <ShieldCheck className="h-6 w-6" />
-      },
-      {
-        title: "Digitalisierung",
-        text: "Implementierung digitaler Lösungen, E-Commerce, Prozessautomatisierung und Schulung in neuen Technologien.",
-        icon: <Calculator className="h-6 w-6" />
-      },
-      {
-        title: "Wirtschaftliche Entwicklung",
-        text: "Unternehmensgründung, Wettbewerbsfähigkeitsverbesserung, nachhaltiger Tourismus und wirtschaftliche Diversifizierung.",
+        title: "Subventionen für Unternehmensinvestitionsprojekte",
+        text: "Subventionen für Unternehmensinvestitionsprojekte in Anlagevermögen, die die Schaffung eines neuen Betriebs, die Aufnahme einer neuen Tätigkeit für das Unternehmen, eine Erweiterung der Produktionskapazität oder eine Verbesserung des Produktionsprozesses beinhalten.",
+        details: "Förderintensität: zwischen 10 % und 60 %, je nach Unternehmensgröße und dem europäischen Regime, dem es beitritt. Maximaler Betrag: 300.000 €. Budget: 22.900.000 €",
+        tag: "Industrie & Immobilien",
         icon: <Building2 className="h-6 w-6" />
       },
       {
-        title: "Bürgerservices",
-        text: "Verbesserung der öffentlichen Infrastruktur, Barrierefreiheit, nachhaltige Mobilität und soziale Dienstleistungen.",
+        title: "Subventionen für Beschäftigungsschaffungsprojekte",
+        text: "Subventionen für Beschäftigungsschaffungsprojekte mit einem Minimum von 3 neuen Arbeitsplätzen.",
+        details: "Förderintensität: 50 %. Maximaler Betrag: 300.000 €. Budget: 4.000.000 €",
+        tag: "Beschäftigung",
         icon: <Users className="h-6 w-6" />
+      },
+      {
+        title: "Subventionen für Wachstums- und neue Geschäftsmöglichkeitsprojekte",
+        text: "Subventionen für Wachstums- und neue Geschäftsmöglichkeitsprojekte: Strategischer Wandel Linie, Struktureller Wandel Linie, Talentgewinnung Linie.",
+        details: "Förderintensität: zwischen 10 % und 75 %, je nach Ausgabentypologie und Unternehmensgröße. Maximaler Betrag: 31.000 € für strategischen Wandel, 210.000 € für strukturellen Wandel und 201.000 € für Talentgewinnung. Budget: 1.500.000 €",
+        tag: "Strategie & Beratung",
+        icon: <Calculator className="h-6 w-6" />
+      },
+      {
+        title: "Subventionen für kooperative Projekte",
+        text: "Subventionen für kooperative Projekte zwischen Unternehmen und Unterstützungsagenten zur Verbesserung der sektoralen Wettbewerbsfähigkeit.",
+        details: "Förderintensität: 75 %. Maximaler Betrag: 150.000 €. Budget: 2.000.000 €",
+        tag: "Kooperative Projekte",
+        icon: <ShieldCheck className="h-6 w-6" />
+      },
+      {
+        title: "Subventionen für Hochwert-Entrepreneurship-Projekte",
+        text: "Subventionen für Hochwert-Entrepreneurship-Projekte, einschließlich Maßnahmen im Zusammenhang mit der Entwicklung des Geschäftsplans des Hochwert-Startups in seinen Anfangsphasen.",
+        details: "Förderintensität: 100 %. Maximaler Betrag: 50.000 €. Budget: 600.000 €",
+        tag: "Startups",
+        icon: <Calculator className="h-6 w-6" />
+      },
+      {
+        title: "Subventionen für technologische Innovationsprojekte",
+        text: "Subventionen für technologische Innovationsprojekte, marktnah, mit mittlerem/niedrigem technologischem Risiko und kurzen Investitionsrückgewinnungszeiten (mit TRLs 7-9), die eine technologische, digitale und grüne Transformation der Unternehmen fördern.",
+        details: "Förderintensität: 75 %. Maximaler Betrag: 150.000 €. Budget: 4.000.000 €",
+        tag: "Innovation",
+        icon: <Calculator className="h-6 w-6" />
       }
     ],
 
@@ -519,9 +565,22 @@ export default function NuclearTransitionFundPage() {
                 </Button>
               </div>
 
-              <div className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/80">
-                <CheckCircle2 className="h-5 w-5 text-green-400" />
-                <span>{c.heroBadge}</span>
+              <div className="flex flex-col gap-4 mt-8">
+                <div className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/80">
+                  <CheckCircle2 className="h-5 w-5 text-green-400" />
+                  <span>{c.heroBadge}</span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 text-sm">
+                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                    <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
+                    <span className="text-primary-foreground font-medium">No cobramos comisiones a éxito</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                    <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
+                    <span className="text-primary-foreground font-medium">Te ayudamos a poner tu centro de Trabajo en Zonas Penta</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -610,8 +669,15 @@ export default function NuclearTransitionFundPage() {
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
               {c.projects.map((project, idx) => (
                 <div key={idx} className="group p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    {project.icon}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                      {project.icon}
+                    </div>
+                    {project.tag && (
+                      <span className="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full uppercase tracking-wide">
+                        {project.tag}
+                      </span>
+                    )}
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">{project.title}</h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">{project.description}</p>
@@ -666,7 +732,7 @@ export default function NuclearTransitionFundPage() {
                 </Button>
                 <div className="flex items-center gap-2 text-muted-foreground mt-4 sm:mt-0 px-4">
                   <Phone className="h-4 w-4" />
-                  <span className="font-medium">977 44 00 00</span>
+                  <span className="font-medium">680 132 404</span>
                 </div>
               </div>
             </div>
