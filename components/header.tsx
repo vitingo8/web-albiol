@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, Phone, ChevronDown, User, Lock, Globe, Laptop } from "lucide-react"
+import { Menu, X, Phone, ChevronDown, User, Lock, Globe, Laptop, ShieldCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
