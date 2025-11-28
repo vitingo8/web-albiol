@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { Menu, X, Phone, ChevronDown, User, Lock, Globe, Laptop, ShieldCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -21,6 +22,8 @@ interface HeaderProps {
 export function Header({ locale, onLocaleChange }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
+  const isGestoriaOnlinePage = pathname === "/gestoria-online"
   
   useEffect(() => {
     const handleScroll = () => {
@@ -119,9 +122,13 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 border-b",
-        isScrolled
-          ? "bg-background/90 backdrop-blur-md border-border/50 shadow-sm py-3"
-          : "bg-transparent border-transparent py-5"
+        isGestoriaOnlinePage
+          ? isScrolled
+            ? "bg-[#ddb042] border-white py-3 shadow-lg"
+            : "bg-[#ddb042] border-white py-5 shadow-lg"
+          : isScrolled
+            ? "bg-background/90 backdrop-blur-md border-border/50 shadow-sm py-3"
+            : "bg-transparent border-transparent py-5"
       )}
     >
       <div className="w-full px-6 md:px-10 flex items-center justify-between">
@@ -132,7 +139,11 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
             <span
               className={cn(
                 "font-serif text-lg font-bold leading-none tracking-tight",
-                isScrolled ? "text-foreground" : "text-foreground md:text-white"
+                isGestoriaOnlinePage
+                  ? "text-slate-950"
+                  : isScrolled
+                    ? "text-foreground"
+                    : "text-foreground md:text-white"
               )}
             >
               Albiol
@@ -140,7 +151,11 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
             <span
               className={cn(
                 "text-[10px] uppercase tracking-widest opacity-80",
-                isScrolled ? "text-muted-foreground" : "text-muted-foreground md:text-white/80"
+                isGestoriaOnlinePage
+                  ? "text-slate-950/80"
+                  : isScrolled
+                    ? "text-muted-foreground"
+                    : "text-muted-foreground md:text-white/80"
               )}
             >
               Consultors
@@ -154,8 +169,15 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
           <DropdownMenu>
             <DropdownMenuTrigger
               className={cn(
-                "flex items-center gap-1 text-sm font-medium transition-colors outline-none px-3 py-1.5 rounded-full hover:bg-[#ddb042] hover:text-white",
-                isScrolled ? "text-foreground" : "text-white"
+                "flex items-center gap-1 text-sm font-medium transition-colors outline-none px-3 py-1.5 rounded-full",
+                isGestoriaOnlinePage
+                  ? "text-slate-950 hover:bg-white hover:text-slate-950"
+                  : "hover:bg-[#ddb042] hover:text-slate-950",
+                isGestoriaOnlinePage
+                  ? "text-slate-950"
+                  : isScrolled
+                    ? "text-foreground"
+                    : "text-white"
               )}
             >
               {t.services} <ChevronDown className="h-4 w-4 opacity-50" />
@@ -182,10 +204,12 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
           <Link
             href="/gestoria-online"
             className={cn(
-              "flex items-center gap-2 text-sm font-bold transition-all px-3 py-1.5 rounded-full border",
-              isScrolled
-                ? "bg-[#ddb042]/10 text-[#ddb042] border-[#ddb042]/30 hover:bg-[#ddb042] hover:text-white"
-                : "bg-white/5 text-[#ddb042] border-[#ddb042]/40 hover:bg-[#ddb042] hover:text-white"
+              "flex items-center gap-2 text-sm font-normal transition-all px-3 py-1.5 rounded-full border",
+              isGestoriaOnlinePage
+                ? "bg-white text-slate-950 border-white/80 hover:bg-white/90 shadow-lg"
+                : isScrolled
+                  ? "bg-[#ddb042]/10 text-[#ddb042] border-[#ddb042]/30 hover:bg-[#ddb042] hover:text-white"
+                  : "bg-[#ddb042] text-white border-white hover:bg-[#ddb042]/90 shadow-lg"
             )}
           >
             <Laptop className="h-4 w-4" />
@@ -208,10 +232,17 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
 
           {/* Enlaces texto con hover gold */}
           <Link
-            href="/nosaltres"
+            href="/sobre-nosaltres"
             className={cn(
-              "text-sm font-medium transition-colors hover:text-[#ddb042]",
-              isScrolled ? "text-foreground" : "text-white"
+              "text-sm font-medium transition-colors",
+              isGestoriaOnlinePage
+                ? "text-slate-950 hover:text-white"
+                : "hover:text-[#ddb042]",
+              isGestoriaOnlinePage
+                ? "text-slate-950"
+                : isScrolled
+                  ? "text-foreground"
+                  : "text-white"
             )}
           >
             {t.team}
@@ -220,8 +251,15 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
           <Link
             href="/contacte"
             className={cn(
-              "text-sm font-medium transition-colors hover:text-[#ddb042]",
-              isScrolled ? "text-foreground" : "text-white"
+              "text-sm font-medium transition-colors",
+              isGestoriaOnlinePage
+                ? "text-slate-950 hover:text-white"
+                : "hover:text-[#ddb042]",
+              isGestoriaOnlinePage
+                ? "text-slate-950"
+                : isScrolled
+                  ? "text-foreground"
+                  : "text-white"
             )}
           >
             {t.contact}
@@ -236,9 +274,14 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
             asChild
             className={cn(
               "gap-2 font-medium transition-colors",
-              isScrolled
-                ? "text-muted-foreground hover:text-[#ddb042] hover:bg-muted"
-                : "text-white/90 hover:text-[#ddb042] hover:bg-white/5"
+              isGestoriaOnlinePage
+                ? "text-slate-950 hover:text-white hover:bg-white/10"
+                : "hover:text-[#ddb042]",
+              isGestoriaOnlinePage
+                ? "text-slate-950 hover:text-white hover:bg-white/10"
+                : isScrolled
+                  ? "text-muted-foreground hover:text-[#ddb042] hover:bg-muted"
+                  : "text-white/90 hover:text-[#ddb042] hover:bg-white/5"
             )}
           >
             <Link href="/area-privada">
@@ -247,7 +290,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
             </Link>
           </Button>
 
-          <div className={cn("h-4 w-px mx-1", isScrolled ? "bg-border" : "bg-white/20")} />
+          <div className={cn("h-4 w-px mx-1", isGestoriaOnlinePage ? "bg-slate-950/30" : isScrolled ? "bg-border" : "bg-white/20")} />
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -255,8 +298,15 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
                 variant="ghost"
                 size="sm"
                 className={cn(
-                  "gap-1 px-2 transition-colors hover:text-[#ddb042]",
-                  isScrolled ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10"
+                  "gap-1 px-2 transition-colors",
+                  isGestoriaOnlinePage
+                    ? "text-slate-950 hover:text-white hover:bg-white/10"
+                    : "hover:text-[#ddb042]",
+                  isGestoriaOnlinePage
+                    ? "text-slate-950 hover:text-white hover:bg-white/10"
+                    : isScrolled
+                      ? "text-foreground hover:bg-muted"
+                      : "text-white hover:bg-white/10"
                 )}
               >
                 <Globe className="h-4 w-4" />
@@ -295,7 +345,11 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
             asChild
             className={cn(
               "font-medium shadow-md transition-transform hover:scale-105",
-              isScrolled ? "bg-primary text-primary-foreground" : "bg-white text-primary hover:bg-slate-100"
+              isGestoriaOnlinePage
+                ? "bg-slate-950 text-white hover:bg-slate-800"
+                : isScrolled
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-white text-primary hover:bg-slate-100"
             )}
           >
             <Link href="/contacte">{t.cta}</Link>
@@ -304,7 +358,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
 
         {/* MOBILE TOGGLE */}
         <button
-          className={cn("lg:hidden p-2", isScrolled ? "text-foreground" : "text-white")}
+          className={cn("lg:hidden p-2", isGestoriaOnlinePage ? "text-slate-950" : isScrolled ? "text-foreground" : "text-white")}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -360,7 +414,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
           </Link>
 
           <Link
-            href="/nosaltres"
+            href="/sobre-nosaltres"
             onClick={() => setIsOpen(false)}
             className="px-4 py-3 font-medium rounded-lg transition-colors hover:bg-[#ddb042] hover:text-white"
           >

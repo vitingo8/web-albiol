@@ -183,7 +183,7 @@ export function Footer({ locale, onLocaleChange }: FooterProps) {
                   className="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity"
                 >
                   <Phone className="h-4 w-4 shrink-0 text-secondary" />
-                  <span>680.132.404</span>
+                  <span>680 132 404</span>
                 </a>
               </li>
               <li>

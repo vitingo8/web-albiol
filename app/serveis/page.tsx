@@ -537,7 +537,7 @@ export default function FiscalServicePage() {
                       href={`https://wa.me/34680132404`}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-primary-foreground"
+                      className="inline-flex items-center gap-2 text-sm text-[#ddb042] hover:text-[#ddb042]/80"
                     >
                       <Phone className="h-4 w-4" />
                       <span>

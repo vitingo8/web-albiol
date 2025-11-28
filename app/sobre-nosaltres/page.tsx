@@ -5,7 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Award, Users, Heart, Target, MapPin, Calendar } from "lucide-react"
+import { ArrowRight, Award, Users, Heart, Target, MapPin, Calendar, Linkedin } from "lucide-react"
 import Link from "next/link"
 import type { Locale } from "@/lib/i18n"
 import { getTranslation } from "@/lib/i18n"
@@ -88,53 +88,40 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Joan Albiol",
-      role: locale === "ca" ? "Director i Fundador" : locale === "es" ? "Director y Fundador" : "Director & Founder",
+      name: "Josep Abdon Albiol Palles",
+      role: locale === "ca" ? "Director Executiu" : locale === "es" ? "Director Ejecutivo" : "Executive Director",
       image: "/professional-business-man-portrait-office.jpg",
+      linkedin: null,
       bio:
         locale === "ca"
-          ? "Més de 25 anys d'experiència en assessoria fiscal i comptable. Expert en pimes i autònoms."
+          ? "Expert en gestió empresarial i estratègia. Més de 20 anys liderant projectes d'èxit en el sector empresarial."
           : locale === "es"
-            ? "Más de 25 años de experiencia en asesoría fiscal y contable. Experto en pymes y autónomos."
-            : "Over 25 years of experience in tax and accounting advisory. SME and freelancer expert.",
+            ? "Experto en gestión empresarial y estrategia. Más de 20 años liderando proyectos de éxito en el sector empresarial."
+            : "Business management and strategy expert. Over 20 years leading successful projects in the business sector.",
     },
     {
-      name: "Marta Vidal",
-      role:
-        locale === "ca"
-          ? "Responsable Àrea Laboral"
-          : locale === "es"
-            ? "Responsable Área Laboral"
-            : "Labour Area Manager",
-      image: "/professional-business-woman-portrait-office.jpg",
+      name: "Mercè Albiol Miralles",
+      role: locale === "ca" ? "Directora d'Operacions" : locale === "es" ? "Directora de Operaciones" : "Operations Director",
+      image: "/merce.png",
+      linkedin: "https://es.linkedin.com/in/merc%C3%A8-albiol-miralles-00429091",
       bio:
         locale === "ca"
-          ? "Especialista en nòmines, contractes i Seguretat Social amb 15 anys d'experiència."
+          ? "Especialista en optimització de processos i gestió d'equips. Apassionada per la innovació i l'excel·lència operativa."
           : locale === "es"
-            ? "Especialista en nóminas, contratos y Seguridad Social con 15 años de experiencia."
-            : "Payroll, contracts and Social Security specialist with 15 years of experience.",
+            ? "Especialista en optimización de procesos y gestión de equipos. Apasionada por la innovación y la excelencia operativa."
+            : "Specialist in process optimization and team management. Passionate about innovation and operational excellence.",
     },
     {
-      name: "Pere Garcia",
-      role: locale === "ca" ? "Assessor Fiscal" : locale === "es" ? "Asesor Fiscal" : "Tax Advisor",
-      image: "/professional-business-man-suit-portrait.jpg",
+      name: "Pau Jornet Meix",
+      role: locale === "ca" ? "Director de Projectes" : locale === "es" ? "Director de Proyectos" : "Project Director",
+      image: "/Pau.png",
+      linkedin: "https://www.linkedin.com/in/pau-jornet-meix-344b4197/",
       bio:
         locale === "ca"
-          ? "Expert en planificació fiscal i Impost de Societats. Especialitzat en el sector agrari."
+          ? "Expert en gestió de projectes complexos i transformació digital. Especialitzat en solucions tecnològiques per a empreses."
           : locale === "es"
-            ? "Experto en planificación fiscal e Impuesto de Sociedades. Especializado en el sector agrario."
-            : "Expert in tax planning and Corporate Tax. Specialised in the agricultural sector.",
-    },
-    {
-      name: "Laura Martínez",
-      role: locale === "ca" ? "Comptable" : locale === "es" ? "Contable" : "Accountant",
-      image: "/professional-accountant-woman-portrait.jpg",
-      bio:
-        locale === "ca"
-          ? "Responsable de comptabilitat i control de gestió per a empreses del territori."
-          : locale === "es"
-            ? "Responsable de contabilidad y control de gestión para empresas del territorio."
-            : "Accounting and management control manager for local businesses.",
+            ? "Experto en gestión de proyectos complejos y transformación digital. Especializado en soluciones tecnológicas para empresas."
+            : "Expert in complex project management and digital transformation. Specialised in technological solutions for businesses.",
     },
   ]
 
@@ -259,7 +246,7 @@ export default function AboutPage() {
                 {locale === "ca" ? "El nostre equip" : locale === "es" ? "Nuestro equipo" : "Our team"}
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {team.map((member) => (
                 <div key={member.name} className="group text-center">
                   <div className="aspect-square rounded-2xl overflow-hidden bg-muted mb-4">
@@ -271,6 +258,17 @@ export default function AboutPage() {
                   </div>
                   <h3 className="font-serif text-xl font-semibold text-foreground mb-1">{member.name}</h3>
                   <p className="text-primary text-sm font-medium mb-2">{member.role}</p>
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors text-sm mb-2"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                      LinkedIn
+                    </a>
+                  )}
                   <p className="text-muted-foreground text-sm leading-relaxed">{member.bio}</p>
                 </div>
               ))}
@@ -332,11 +330,16 @@ export default function AboutPage() {
                   </Button>
                 </Link>
               </div>
-              <div className="aspect-video rounded-2xl overflow-hidden bg-white/10">
-                <img
-                  src="/tortosa-city-aerial-view-spain.jpg"
-                  alt="Tortosa city"
-                  className="w-full h-full object-cover"
+              <div className="aspect-video rounded-2xl overflow-hidden bg-muted border border-border/50 mb-8">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2988.5!2d0.5214!3d40.8125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a149f6b4c4b4c5%3A0x4b4c4b4c4b4c4b4c!2sCarrer%20Argentina%2C%209%2C%2043500%20Tortosa%2C%20Tarragona!5e0!3m2!1sca!2ses!4v1700000000000!5m2!1sca!2ses"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Albiol Consultors - Carrer Argentina 9, 2A, Tortosa"
                 />
               </div>
             </div>
