@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react"
 import type { Locale } from "@/lib/i18n"
 
 const heroContent = {
@@ -15,6 +15,7 @@ const heroContent = {
     ctaPrimary: "Demanar primera cita",
     ctaSecondary: "Serveis Online",
     floatingBadge: { title: "Tràmits en 24h", desc: "Agilitat garantida" },
+    scrollText: "Descobrir més",
   },
   es: {
     locationBadge: "Tortosa · Terres de l'Ebre",
@@ -24,6 +25,7 @@ const heroContent = {
     ctaPrimary: "Pedir primera cita",
     ctaSecondary: "Servicios Online",
     floatingBadge: { title: "Trámites en 24h", desc: "Agilidad garantizada" },
+    scrollText: "Descubrir más",
   },
   en: {
     locationBadge: "Tortosa · Spain",
@@ -33,6 +35,7 @@ const heroContent = {
     ctaPrimary: "Book appointment",
     ctaSecondary: "Online Services",
     floatingBadge: { title: "24h Processing", desc: "Speed guaranteed" },
+    scrollText: "Discover more",
   },
   fr: {
     locationBadge: "Tortosa · Espagne",
@@ -42,6 +45,7 @@ const heroContent = {
     ctaPrimary: "Prendre rendez-vous",
     ctaSecondary: "Services en ligne",
     floatingBadge: { title: "Traitement 24h", desc: "Rapidité garantie" },
+    scrollText: "Découvrir plus",
   },
   de: {
     locationBadge: "Tortosa · Spanien",
@@ -51,6 +55,7 @@ const heroContent = {
     ctaPrimary: "Termin vereinbaren",
     ctaSecondary: "Online-Dienste",
     floatingBadge: { title: "24h Bearbeitung", desc: "Schnelligkeit garantiert" },
+    scrollText: "Mehr entdecken",
   },
 } as const
 
@@ -61,6 +66,13 @@ interface HeroSectionProps {
 export function HeroSection({ locale }: HeroSectionProps) {
   const t = heroContent[locale] ?? heroContent["ca"]
   const c = t ?? heroContent["en"]
+
+  const scrollToNextSection = () => {
+    const nextSection = document.querySelector('main > section:nth-of-type(2)')
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
 
   return (
     <section className="relative min-h-[100vh] flex items-center bg-primary overflow-hidden pt-24 pb-12 lg:pt-24 lg:pb-14">
@@ -149,6 +161,20 @@ export function HeroSection({ locale }: HeroSectionProps) {
           </div>
 
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <button
+          onClick={scrollToNextSection}
+          className="flex flex-col items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors group"
+          aria-label={c.scrollText}
+        >
+          <span className="text-xs font-medium uppercase tracking-wider">
+            {c.scrollText}
+          </span>
+          <ChevronDown className="h-6 w-6 group-hover:translate-y-1 transition-transform" />
+        </button>
       </div>
     </section>
   )
