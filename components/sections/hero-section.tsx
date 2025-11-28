@@ -4,7 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
-import { CompaniesTicker } from "@/components/companies-ticker"
 import type { Locale } from "@/lib/i18n"
 
 const heroContent = {
@@ -64,7 +63,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
   const c = t ?? heroContent["en"]
 
   return (
-    <section className="relative min-h-[95vh] flex items-center bg-primary overflow-hidden pt-24 pb-12 lg:pt-24 lg:pb-14">
+    <section className="relative min-h-[100vh] flex items-center bg-primary overflow-hidden pt-24 pb-12 lg:pt-24 lg:pb-14">
       {/* Decoración de fondo con acento */}
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px] opacity-60 pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] opacity-60 pointer-events-none" />
@@ -115,9 +114,6 @@ export function HeroSection({ locale }: HeroSectionProps) {
                 </Link>
               </Button>
             </div>
-
-            {/* Companies Ticker Animation */}
-            <CompaniesTicker />
 
           </div>
 
