@@ -196,10 +196,10 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
           <Link
             href="/fons-transicio-nuclear"
             className={cn(
-              "flex items-center gap-2 text-sm font-bold transition-all px-3 py-1.5 rounded-full border",
+              "flex items-center gap-2 text-sm font-bold transition-all px-3 py-1.5 rounded-full border animate-pulse",
               isScrolled
-                ? "bg-primary/10 text-primary border-primary/30 hover:bg-primary hover:text-primary-foreground"
-                : "bg-white/5 text-primary border-primary/40 hover:bg-primary hover:text-primary-foreground"
+                ? "bg-white text-slate-950 border-white/80 hover:bg-white/90 shadow-lg"
+                : "bg-white text-slate-950 border-white/80 hover:bg-white/90 shadow-lg"
             )}
           >
             <ShieldCheck className="h-4 w-4" />
@@ -353,7 +353,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
           <Link
             href="/fons-transicio-nuclear"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-bold text-sm transition-colors hover:bg-primary hover:text-primary-foreground"
+            className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white text-slate-950 font-bold text-sm transition-colors hover:bg-white/90 animate-pulse shadow-lg"
           >
             <ShieldCheck className="h-5 w-5" />
             {t.nuclear}
