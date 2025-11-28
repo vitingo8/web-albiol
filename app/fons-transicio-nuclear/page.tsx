@@ -32,6 +32,8 @@ const nuclearFundCopy = {
     heroTitle: "Projectes Empresarials a les Zones de Transició Nuclear - Terres de l'Ebre",
     heroSubtitle: "Subvencions per a projectes empresarials que contribueixen al desenvolupament socioeconòmic i la diversificació econòmica de les zones afectades per la transició nuclear.",
     heroBadge: "Finançament disponible 2024-2025",
+    valueProp1: "No cobrem comissions a èxit",
+    valueProp2: "T'ajudem a posar el teu centre de Treball en Zones Penta",
     ctaPrimary: "Sol·licitar informació",
     ctaSecondary: "Veure municipis beneficiaris",
 
@@ -128,6 +130,8 @@ const nuclearFundCopy = {
     heroTitle: "Proyectos Empresariales en las Zonas de Transición Nuclear - Terres de l'Ebre",
     heroSubtitle: "Subvenciones para proyectos empresariales que contribuyen al desarrollo socioeconómico y la diversificación económica de las zonas afectadas por la transición nuclear.",
     heroBadge: "Financiación disponible 2024-2025",
+    valueProp1: "No cobramos comisiones a éxito",
+    valueProp2: "Te ayudamos a poner tu centro de Trabajo en Zonas Penta",
     ctaPrimary: "Solicitar información",
     ctaSecondary: "Ver municipios beneficiarios",
 
@@ -224,6 +228,8 @@ const nuclearFundCopy = {
     heroTitle: "Business Projects in Nuclear Transition Zones - Terres de l'Ebre",
     heroSubtitle: "Funding for projects that promote fair energy transition and socioeconomic development in areas affected by nuclear power production.",
     heroBadge: "Funding available 2024-2025",
+    valueProp1: "No success fees",
+    valueProp2: "We help you establish your workplace in PENTA zones",
     ctaPrimary: "Request information",
     ctaSecondary: "View beneficiary municipalities",
 
@@ -320,6 +326,8 @@ const nuclearFundCopy = {
     heroTitle: "Projets Entrepreneuriaux dans les Zones de Transition Nucléaire - Terres de l'Ebre",
     heroSubtitle: "Financement pour des projets qui promeuvent la transition énergétique juste et le développement socioéconomique dans les zones affectées par la production d'énergie nucléaire.",
     heroBadge: "Financement disponible 2024-2025",
+    valueProp1: "Pas de commissions à succès",
+    valueProp2: "Nous vous aidons à établir votre centre de travail dans les zones PENTA",
     ctaPrimary: "Demander information",
     ctaSecondary: "Voir municipalités bénéficiaires",
 
@@ -416,6 +424,8 @@ const nuclearFundCopy = {
     heroTitle: "Geschäftsprojekte in Kernenergie-Übergangszonen - Terres de l'Ebre",
     heroSubtitle: "Finanzierung für Projekte, die einen fairen Energiewandel und die sozioökonomische Entwicklung in Gebieten fördern, die von der Kernenergieproduktion betroffen sind.",
     heroBadge: "Finanzierung verfügbar 2024-2025",
+    valueProp1: "Keine Erfolgshonorare",
+    valueProp2: "Wir helfen Ihnen, Ihren Arbeitsplatz in PENTA-Zonen einzurichten",
     ctaPrimary: "Information anfordern",
     ctaSecondary: "Begünstigte Gemeinden ansehen",
 
@@ -567,27 +577,26 @@ export default function NuclearTransitionFundPage() {
                       </Button>
                     </div>
 
-                    <div className="flex flex-col gap-4 mt-8">
-                      <div className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/80">
-                        <CheckCircle2 className="h-5 w-5 text-green-400" />
-                        <span>{c.heroBadge}</span>
-                      </div>
-
-                      <div className="flex flex-col sm:flex-row gap-4 text-sm">
-                        <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                          <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
-                          <span className="text-primary-foreground font-medium">No cobramos comisiones a éxito</span>
-                        </div>
-                        <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                          <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
-                          <span className="text-primary-foreground font-medium">Te ayudamos a poner tu centro de Trabajo en Zonas Penta</span>
-                        </div>
-                      </div>
+                    <div className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/80">
+                      <CheckCircle2 className="h-5 w-5 text-green-400" />
+                      <span>{c.heroBadge}</span>
                     </div>
                   </div>
 
               {/* Columna derecha: imagen */}
               <div className="relative h-[400px] lg:h-[500px] w-full hidden lg:block animate-in fade-in slide-in-from-right-12 duration-1000 delay-200">
+                {/* Etiquetas flotantes encima de la imagen */}
+                <div className="absolute top-8 left-8 z-10 flex flex-col gap-3">
+                  <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg animate-pulse border border-white/20">
+                    <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
+                    <span className="text-slate-900 font-semibold text-sm">{c.valueProp1}</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg border border-white/20">
+                    <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
+                    <span className="text-slate-900 font-medium text-sm">{c.valueProp2}</span>
+                  </div>
+                </div>
+
                 <div className="absolute inset-0 bg-card rounded-[30px_30px_200px_30px] overflow-hidden border border-border/50 shadow-2xl">
                   <img
                     src="/FTN.jpg"
