@@ -7,18 +7,6 @@ const nextConfig = {
   },
   // Optimización de polyfills - excluir innecesarios para navegadores modernos
   transpilePackages: [],
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
-  },
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -42,6 +30,24 @@ const nextConfig = {
   },
   // Configuración Turbopack compatible
   turbopack: {},
+  // Optimizaciones críticas para rendimiento móvil
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Forzar no incluir polyfills innecesarios
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      // Remover polyfills innecesarios para navegadores modernos
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+        crypto: false,
+      }
+    }
+    return config
+  },
   // Optimizaciones adicionales
   poweredByHeader: false,
   compress: true,

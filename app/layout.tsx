@@ -8,6 +8,7 @@ import { Suspense } from "react"
 import { SEO_CONFIG } from "@/config/seo-config"
 import { CriticalCSS } from "@/components/CriticalCSS"
 import { ResourcePreloader } from "@/components/ResourcePreloader"
+import { OptimizedAnimations } from "@/components/OptimizedAnimations"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
@@ -353,6 +354,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <CriticalCSS />
         <ResourcePreloader />
+        <OptimizedAnimations />
         <Suspense fallback={null}>{children}</Suspense>
         {process.env.NODE_ENV === "production" && (
           <>

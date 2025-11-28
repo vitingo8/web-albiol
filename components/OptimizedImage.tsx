@@ -40,36 +40,53 @@ export function OptimizedImage({
   const [isInView, setIsInView] = useState(priority)
   const imgRef = useRef<HTMLDivElement>(null)
 
-  // Intersection Observer para lazy loading automático
+  // Intersection Observer para lazy loading automático - optimizado para rendimiento
   useEffect(() => {
     if (priority || loading === 'eager') {
       setIsInView(true)
       return
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true)
-          observer.disconnect()
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '100px' // Cargar 100px antes de que entre en viewport
-      }
-    )
+    // Usar requestIdleCallback para inicializar el observer cuando el hilo principal esté libre
+    const initObserver = () => {
+      if (!imgRef.current) return
 
-    if (imgRef.current) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          // Usar requestAnimationFrame para cambios de estado durante animaciones
+          if (entry.isIntersecting) {
+            requestAnimationFrame(() => {
+              setIsInView(true)
+              observer.disconnect()
+            })
+          }
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '100px', // Cargar 100px antes de que entre en viewport
+        }
+      )
+
       observer.observe(imgRef.current)
+
+      return () => observer.disconnect()
     }
 
-    return () => observer.disconnect()
+    // Inicializar el observer cuando el navegador esté idle
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(initObserver, { timeout: 2000 })
+    } else {
+      // Fallback para navegadores que no soportan requestIdleCallback
+      setTimeout(initObserver, 100)
+    }
+
+    return () => {
+      // Cleanup se maneja dentro de initObserver
+    }
   }, [priority, loading])
 
   // Generate WebP srcSet for modern browsers
   const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp')
-  const avifSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.avif')
 
   const handleLoad = () => {
     setIsLoaded(true)
@@ -102,39 +119,24 @@ export function OptimizedImage({
       style={{ width, height }}
     >
       {isInView && (
-        <picture>
-          {/* AVIF for modern browsers */}
-          <source
-            srcSet={avifSrc}
-            type="image/avif"
-            sizes={sizes}
-          />
-          {/* WebP for modern browsers */}
-          <source
-            srcSet={webpSrc}
-            type="image/webp"
-            sizes={sizes}
-          />
-          {/* Fallback to original format */}
-          <Image
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            quality={quality}
-            priority={priority}
-            placeholder={placeholder}
-            blurDataURL={blurDataURL}
-            sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
-            loading={loading || (priority ? 'eager' : 'lazy')}
-            onLoad={handleLoad}
-            onError={handleError}
-            className={cn(
-              "transition-opacity duration-300",
-              isLoaded ? "opacity-100" : "opacity-0"
-            )}
-          />
-        </picture>
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          quality={quality}
+          priority={priority}
+          placeholder={placeholder}
+          blurDataURL={blurDataURL}
+          sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
+          loading={loading || (priority ? 'eager' : 'lazy')}
+          onLoad={handleLoad}
+          onError={handleError}
+          className={cn(
+            "transition-opacity duration-300",
+            isLoaded ? "opacity-100" : "opacity-0"
+          )}
+        />
       )}
 
       {/* Loading skeleton */}
