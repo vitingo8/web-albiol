@@ -347,7 +347,7 @@ export default function FiscalServicePage() {
   const base = fiscalCopy[locale] ?? fiscalCopy["ca"]
   const c = base ?? fiscalCopy["en"]
 
-  const phoneNumber = "+34977440000"
+  const phoneNumber = "+34680132404"
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -385,7 +385,7 @@ export default function FiscalServicePage() {
                   className="inline-flex items-center gap-2 text-sm md:text-base text-primary-foreground/80 hover:text-primary-foreground"
                 >
                   <Phone className="h-4 w-4" />
-                  <span>977 44 00 00</span>
+                  <span>680132404</span>
                 </a>
               </div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-foreground/10 text-xs text-primary-foreground/80 mt-4">
@@ -534,7 +534,7 @@ export default function FiscalServicePage() {
                       </Link>
                     </Button>
                     <a
-                      href={`https://wa.me/34977440000`}
+                      href={`https://wa.me/34680132404`}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-primary-foreground"
@@ -577,7 +577,7 @@ export default function FiscalServicePage() {
                   className="inline-flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-primary"
                 >
                   <Phone className="h-4 w-4" />
-                  <span>977 44 00 00</span>
+                  <span>680132404</span>
                 </a>
               </div>
             </div>

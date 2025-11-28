@@ -88,7 +88,7 @@ export default function ContactPage() {
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="phone">{t.contact.form.phone}</Label>
-                        <Input id="phone" type="tel" placeholder="977 00 00 00" className="h-12" />
+                        <Input id="phone" type="tel" placeholder="680.132.404" className="h-12" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="company">{t.contact.form.companyLabel}</Label>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">{t.contact.info.phone}</h3>
-                        <p className="text-muted-foreground hover:text-primary transition-colors">977 00 00 00</p>
+                        <p className="text-muted-foreground hover:text-primary transition-colors">680.132.404</p>
                       </div>
                     </a>
 

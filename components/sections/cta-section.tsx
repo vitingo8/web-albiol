@@ -37,7 +37,7 @@ export function CtaSection({ locale }: CtaSectionProps) {
               className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white gap-2"
             >
               <Phone className="h-4 w-4" />
-              977 00 00 00
+              680.132.404
             </Button>
           </div>
         </div>

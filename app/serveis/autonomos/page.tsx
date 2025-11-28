@@ -529,7 +529,7 @@ export default function AutonomsServicePage() {
                 </Button>
                 <div className="flex items-center gap-2 text-muted-foreground mt-4 sm:mt-0 px-4">
                    <Phone className="h-4 w-4" />
-                   <span className="font-medium">977 44 00 00</span>
+                   <span className="font-medium">680132404</span>
                 </div>
               </div>
             </div>

@@ -403,7 +403,7 @@ export default function TramitsServicePage() {
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white h-12 px-8">
-                   <a href="https://wa.me/34977440000" target="_blank" rel="noopener noreferrer">
+                   <a href="https://wa.me/34680132404" target="_blank" rel="noopener noreferrer">
                     <Phone className="mr-2 h-4 w-4" />
                     {c.ctaSecondary}
                   </a>
@@ -531,7 +531,7 @@ export default function TramitsServicePage() {
                 </Button>
                 <div className="flex items-center gap-2 text-muted-foreground mt-4 sm:mt-0 px-4">
                    <Phone className="h-4 w-4" />
-                   <span className="font-medium">977 44 00 00</span>
+                   <span className="font-medium">680132404</span>
                 </div>
               </div>
             </div>
