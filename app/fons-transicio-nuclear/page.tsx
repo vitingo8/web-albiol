@@ -539,51 +539,52 @@ export default function NuclearTransitionFundPage() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Columna izquierda: texto */}
               <div className="max-w-2xl lg:pl-4 xl:pl-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md mb-6 border border-white/20">
-                <ShieldCheck className="h-4 w-4 text-secondary" />
-                <span className="text-xs md:text-sm font-semibold uppercase tracking-wider">{c.heroKicker}</span>
-              </div>
-
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance leading-tight">
-                {c.heroTitle}
-              </h1>
-
-              <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 text-pretty max-w-2xl">
-                {c.heroSubtitle}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold text-base h-12 px-8 shadow-lg shadow-secondary/20">
-                  <Link href="/contacte">
-                    {c.ctaPrimary}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white h-12 px-8">
-                  <a href="#municipis">
-                    <MapPin className="mr-2 h-4 w-4" />
-                    {c.ctaSecondary}
-                  </a>
-                </Button>
-              </div>
-
-              <div className="flex flex-col gap-4 mt-8">
-                <div className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/80">
-                  <CheckCircle2 className="h-5 w-5 text-green-400" />
-                  <span>{c.heroBadge}</span>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4 text-sm">
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
-                    <span className="text-primary-foreground font-medium">No cobramos comisiones a éxito</span>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md mb-6 border border-white/20">
+                    <ShieldCheck className="h-4 w-4 text-secondary" />
+                    <span className="text-xs md:text-sm font-semibold uppercase tracking-wider">{c.heroKicker}</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
-                    <span className="text-primary-foreground font-medium">Te ayudamos a poner tu centro de Trabajo en Zonas Penta</span>
+
+                  <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance leading-tight">
+                    {c.heroTitle}
+                  </h1>
+
+                  <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 text-pretty max-w-2xl">
+                    {c.heroSubtitle}
+                  </p>
+
+                    <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                      <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold text-base h-12 px-8 shadow-lg shadow-secondary/20">
+                        <Link href="/contacte">
+                          {c.ctaPrimary}
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                      <Button asChild size="lg" variant="outline" className="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white h-12 px-8">
+                        <a href="#municipis">
+                          <MapPin className="mr-2 h-4 w-4" />
+                          {c.ctaSecondary}
+                        </a>
+                      </Button>
+                    </div>
+
+                    <div className="flex flex-col gap-4 mt-8">
+                      <div className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/80">
+                        <CheckCircle2 className="h-5 w-5 text-green-400" />
+                        <span>{c.heroBadge}</span>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-4 text-sm">
+                        <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
+                          <span className="text-primary-foreground font-medium">No cobramos comisiones a éxito</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
+                          <span className="text-primary-foreground font-medium">Te ayudamos a poner tu centro de Trabajo en Zonas Penta</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
 
               {/* Columna derecha: imagen */}
               <div className="relative h-[400px] lg:h-[500px] w-full hidden lg:block animate-in fade-in slide-in-from-right-12 duration-1000 delay-200">
