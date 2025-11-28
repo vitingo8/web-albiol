@@ -29,8 +29,8 @@ const DEFAULT_LOCALE: Locale = "ca"
 const nuclearFundCopy = {
   ca: {
     heroKicker: "Fons Transició Nuclear",
-    heroTitle: "Subvencions per a projectes d'energia renovable i transició energètica a les Terres de l'Ebre",
-    heroSubtitle: "Finançament per a projectes que promouen la transició energètica justa i el desenvolupament socioeconòmic en zones afectades per la producció d'energia nuclear.",
+    heroTitle: "Projectes Empresarials a les Zones de Transició Nuclear - Terres de l'Ebre",
+    heroSubtitle: "Subvencions per a projectes empresarials que contribueixen al desenvolupament socioeconòmic i la diversificació econòmica de les zones afectades per la transició nuclear.",
     heroBadge: "Finançament disponible 2024-2025",
     ctaPrimary: "Sol·licitar informació",
     ctaSecondary: "Veure municipis beneficiaris",
@@ -49,27 +49,43 @@ const nuclearFundCopy = {
     municipalitiesHighlight: "Més de 90 municipis de Catalunya afectats per la producció nuclear",
 
     projectsTitle: "Projectes Subvencionables",
-    projectsIntro: "Són subvencionables tots aquells projectes que tinguin com a base la transició energètica, la digitalització i la promoció econòmica:",
+    projectsIntro: "Quines són les línies d'actuació dels ajuts?",
     projects: [
       {
-        title: "Transició energètica",
-        text: "Instal·lacions d'energia renovable (solar, eòlica, biomasa), millora de l'eficiència energètica i projectes d'economia circular.",
-        icon: <ShieldCheck className="h-6 w-6" />
-      },
-      {
-        title: "Digitalització",
-        text: "Implementació de solucions digitals, comerç electrònic, automatització de processos i formació en noves tecnologies.",
-        icon: <Calculator className="h-6 w-6" />
-      },
-      {
-        title: "Desenvolupament econòmic",
-        text: "Creació d'empreses, millora de la competitivitat, turisme sostenible i diversificació econòmica.",
+        title: "Subvencions per a projectes d'inversió empresarial",
+        text: "Subvencions per a projectes d'inversió empresarial en actius fixes que suposin la creació d'un nou establiment, la incorporació d'una nova activitat per l'empresa, una ampliació de la capacitat productiva o una millora del procés productiu.",
+        details: "Intensitat de l'ajut: entre el 10% i el 60%, en funció de la mida de l'empresa i el règim europeu al qual s'aculli. Import màxim: 300.000€. Pressupost: 22.900.000€",
         icon: <Building2 className="h-6 w-6" />
       },
       {
-        title: "Serveis a la ciutadania",
-        text: "Millora d'infraestructures públiques, accessibilitat, mobilitat sostenible i serveis socials.",
+        title: "Subvencions per a projectes de creació d'ocupació",
+        text: "Subvencions per a projectes de creació d'ocupació d'un mínim de 3 nous llocs de treball.",
+        details: "Intensitat de l'ajut: 50%. Import màxim: 300.000€. Pressupost: 4.000.000€",
         icon: <Users className="h-6 w-6" />
+      },
+      {
+        title: "Subvencions per a projectes de creixement i noves oportunitats de negoci",
+        text: "Subvencions per a projectes de creixement i noves oportunitats de negoci: Línia canvi estratègic, Línia canvi estructural, Línia captació de talent.",
+        details: "Intensitat de l'ajut: entre el 10% i el 75%, en funció de la tipologia de despesa i la mida d'empresa. Import màxim: 31.000€ per canvi estratègic, 210.000€ per canvi estructural i 201.000€ per captació de talent. Pressupost: 1.500.000€",
+        icon: <Calculator className="h-6 w-6" />
+      },
+      {
+        title: "Subvencions per a projectes cooperatius",
+        text: "Subvencions per a projectes cooperatius, entre empreses i agents de suport per millorar la competitivitat sectorial.",
+        details: "Intensitat de l'ajut: 75%. Import màxim: 150.000€. Pressupost: 2.000.000€",
+        icon: <ShieldCheck className="h-6 w-6" />
+      },
+      {
+        title: "Subvencions per a projectes d'emprenedoria d'alt valor afegit",
+        text: "Subvencions per a projectes d'emprenedoria d'alt valor afegit, incloent les actuacions relacionades amb el desenvolupament del pla de negoci de l'empresa emergent d'alt valor afegit en les seves fases inicials.",
+        details: "Intensitat de l'ajut: 100%. Import màxim: 50.000€. Pressupost: 600.000€",
+        icon: <Calculator className="h-6 w-6" />
+      },
+      {
+        title: "Subvencions per a projectes d'innovació tecnològica",
+        text: "Subvencions per a projectes d'innovació tecnològica, propers al mercat, amb risc tecnològic mig/baix i curts períodes de recuperació de la inversió (amb TRLs 7-9), que fomentin una transformació tecnològica, digital i verda de les empreses.",
+        details: "Intensitat de l'ajut: 75%. Import màxim: 150.000€. Pressupost: 4.000.000€",
+        icon: <Calculator className="h-6 w-6" />
       }
     ],
 
@@ -103,8 +119,8 @@ const nuclearFundCopy = {
   },
   es: {
     heroKicker: "Fondo Transición Nuclear",
-    heroTitle: "Subvenciones para proyectos de energía renovable y transición energética en las Terres de l'Ebre",
-    heroSubtitle: "Financiación para proyectos que promueven la transición energética justa y el desarrollo socioeconómico en zonas afectadas por la producción de energía nuclear.",
+    heroTitle: "Proyectos Empresariales en las Zonas de Transición Nuclear - Terres de l'Ebre",
+    heroSubtitle: "Subvenciones para proyectos empresariales que contribuyen al desarrollo socioeconómico y la diversificación económica de las zonas afectadas por la transición nuclear.",
     heroBadge: "Financiación disponible 2024-2025",
     ctaPrimary: "Solicitar información",
     ctaSecondary: "Ver municipios beneficiarios",
@@ -123,27 +139,43 @@ const nuclearFundCopy = {
     municipalitiesHighlight: "Más de 90 municipios de Catalunya afectados por la producción nuclear",
 
     projectsTitle: "Proyectos Subvencionables",
-    projectsIntro: "Son subvencionables todos aquellos proyectos que tengan como base la transición energética, la digitalización y la promoción económica:",
+    projectsIntro: "¿Cuáles son las líneas de actuación de las ayudas?",
     projects: [
       {
-        title: "Transición energética",
-        text: "Instalaciones de energía renovable (solar, eólica, biomasa), mejora de la eficiencia energética y proyectos de economía circular.",
-        icon: <ShieldCheck className="h-6 w-6" />
-      },
-      {
-        title: "Digitalización",
-        text: "Implementación de soluciones digitales, comercio electrónico, automatización de procesos y formación en nuevas tecnologías.",
-        icon: <Calculator className="h-6 w-6" />
-      },
-      {
-        title: "Desarrollo económico",
-        text: "Creación de empresas, mejora de la competitividad, turismo sostenible y diversificación económica.",
+        title: "Subvenciones para proyectos de inversión empresarial",
+        text: "Subvenciones para proyectos de inversión empresarial en activos fijos que supongan la creación de un nuevo establecimiento, la incorporación de una nueva actividad para la empresa, una ampliación de la capacidad productiva o una mejora del proceso productivo.",
+        details: "Intensidad de la ayuda: entre el 10% y el 60%, en función del tamaño de la empresa y el régimen europeo al que se acoja. Importe máximo: 300.000€. Presupuesto: 22.900.000€",
         icon: <Building2 className="h-6 w-6" />
       },
       {
-        title: "Servicios a la ciudadanía",
-        text: "Mejora de infraestructuras públicas, accesibilidad, movilidad sostenible y servicios sociales.",
+        title: "Subvenciones para proyectos de creación de ocupación",
+        text: "Subvenciones para proyectos de creación de ocupación de un mínimo de 3 nuevos puestos de trabajo.",
+        details: "Intensidad de la ayuda: 50%. Importe máximo: 300.000€. Presupuesto: 4.000.000€",
         icon: <Users className="h-6 w-6" />
+      },
+      {
+        title: "Subvenciones para proyectos de crecimiento y nuevas oportunidades de negocio",
+        text: "Subvenciones para proyectos de crecimiento y nuevas oportunidades de negocio: Línea cambio estratégico, Línea cambio estructural, Línea captación de talento.",
+        details: "Intensidad de la ayuda: entre el 10% y el 75%, en función de la tipología de gasto y el tamaño de empresa. Importe máximo: 31.000€ por cambio estratégico, 210.000€ por cambio estructural y 201.000€ por captación de talento. Presupuesto: 1.500.000€",
+        icon: <Calculator className="h-6 w-6" />
+      },
+      {
+        title: "Subvenciones para proyectos cooperativos",
+        text: "Subvenciones para proyectos cooperativos, entre empresas y agentes de apoyo para mejorar la competitividad sectorial.",
+        details: "Intensidad de la ayuda: 75%. Importe máximo: 150.000€. Presupuesto: 2.000.000€",
+        icon: <ShieldCheck className="h-6 w-6" />
+      },
+      {
+        title: "Subvenciones para proyectos de emprendimiento de alto valor añadido",
+        text: "Subvenciones para proyectos de emprendimiento de alto valor añadido, incluyendo las actuaciones relacionadas con el desarrollo del plan de negocio de la empresa emergente de alto valor añadido en sus fases iniciales.",
+        details: "Intensidad de la ayuda: 100%. Importe máximo: 50.000€. Presupuesto: 600.000€",
+        icon: <Calculator className="h-6 w-6" />
+      },
+      {
+        title: "Subvenciones para proyectos de innovación tecnológica",
+        text: "Subvenciones para proyectos de innovación tecnológica, próximos al mercado, con riesgo tecnológico medio/bajo y cortos períodos de recuperación de la inversión (con TRLs 7-9), que fomenten una transformación tecnológica, digital y verde de las empresas.",
+        details: "Intensidad de la ayuda: 75%. Importe máximo: 150.000€. Presupuesto: 4.000.000€",
+        icon: <Calculator className="h-6 w-6" />
       }
     ],
 
@@ -177,7 +209,7 @@ const nuclearFundCopy = {
   },
   en: {
     heroKicker: "Nuclear Transition Fund",
-    heroTitle: "Grants for renewable energy and energy transition projects in Terres de l'Ebre",
+    heroTitle: "Business Projects in Nuclear Transition Zones - Terres de l'Ebre",
     heroSubtitle: "Funding for projects that promote fair energy transition and socioeconomic development in areas affected by nuclear power production.",
     heroBadge: "Funding available 2024-2025",
     ctaPrimary: "Request information",
@@ -197,27 +229,43 @@ const nuclearFundCopy = {
     municipalitiesHighlight: "More than 90 municipalities in Catalunya affected by nuclear production",
 
     projectsTitle: "Eligible Projects",
-    projectsIntro: "All projects based on energy transition, digitalization and economic promotion are eligible:",
+    projectsIntro: "What are the lines of action for the grants?",
     projects: [
       {
-        title: "Energy transition",
-        text: "Renewable energy installations (solar, wind, biomass), energy efficiency improvements and circular economy projects.",
-        icon: <ShieldCheck className="h-6 w-6" />
-      },
-      {
-        title: "Digitalization",
-        text: "Implementation of digital solutions, e-commerce, process automation and training in new technologies.",
-        icon: <Calculator className="h-6 w-6" />
-      },
-      {
-        title: "Economic development",
-        text: "Business creation, competitiveness improvement, sustainable tourism and economic diversification.",
+        title: "Grants for business investment projects",
+        text: "Grants for business investment projects in fixed assets that involve the creation of a new establishment, the incorporation of a new activity for the company, an expansion of production capacity or an improvement of the production process.",
+        details: "Aid intensity: between 10% and 60%, depending on the size of the company and the European regime to which it subscribes. Maximum amount: 300,000€. Budget: 22,900,000€",
         icon: <Building2 className="h-6 w-6" />
       },
       {
-        title: "Citizen services",
-        text: "Public infrastructure improvements, accessibility, sustainable mobility and social services.",
+        title: "Grants for employment creation projects",
+        text: "Grants for employment creation projects of a minimum of 3 new jobs.",
+        details: "Aid intensity: 50%. Maximum amount: 300,000€. Budget: 4,000,000€",
         icon: <Users className="h-6 w-6" />
+      },
+      {
+        title: "Grants for growth and new business opportunity projects",
+        text: "Grants for growth and new business opportunity projects: Strategic change line, Structural change line, Talent attraction line.",
+        details: "Aid intensity: between 10% and 75%, depending on the type of expenditure and company size. Maximum amount: 31,000€ for strategic change, 210,000€ for structural change and 201,000€ for talent attraction. Budget: 1,500,000€",
+        icon: <Calculator className="h-6 w-6" />
+      },
+      {
+        title: "Grants for cooperative projects",
+        text: "Grants for cooperative projects, between companies and support agents to improve sector competitiveness.",
+        details: "Aid intensity: 75%. Maximum amount: 150,000€. Budget: 2,000,000€",
+        icon: <ShieldCheck className="h-6 w-6" />
+      },
+      {
+        title: "Grants for high value-added entrepreneurship projects",
+        text: "Grants for high value-added entrepreneurship projects, including actions related to the development of the business plan of the high value-added emerging company in its initial phases.",
+        details: "Aid intensity: 100%. Maximum amount: 50,000€. Budget: 600,000€",
+        icon: <Calculator className="h-6 w-6" />
+      },
+      {
+        title: "Grants for technological innovation projects",
+        text: "Grants for technological innovation projects, close to market, with medium/low technological risk and short investment recovery periods (with TRLs 7-9), that promote a technological, digital and green transformation of companies.",
+        details: "Aid intensity: 75%. Maximum amount: 150,000€. Budget: 4,000,000€",
+        icon: <Calculator className="h-6 w-6" />
       }
     ],
 
@@ -251,7 +299,7 @@ const nuclearFundCopy = {
   },
   fr: {
     heroKicker: "Fonds Transition Nucléaire",
-    heroTitle: "Subventions pour projets d'énergie renouvelable et transition énergétique dans les Terres de l'Ebre",
+    heroTitle: "Projets Entrepreneuriaux dans les Zones de Transition Nucléaire - Terres de l'Ebre",
     heroSubtitle: "Financement pour des projets qui promeuvent la transition énergétique juste et le développement socioéconomique dans les zones affectées par la production d'énergie nucléaire.",
     heroBadge: "Financement disponible 2024-2025",
     ctaPrimary: "Demander information",
@@ -271,27 +319,43 @@ const nuclearFundCopy = {
     municipalitiesHighlight: "Plus de 90 municipalités de Catalunya affectées par la production nucléaire",
 
     projectsTitle: "Projets Subventionnables",
-    projectsIntro: "Tous les projets basés sur la transition énergétique, la numérisation et la promotion économique sont subventionnables :",
+    projectsIntro: "Quelles sont les lignes d'action des aides ?",
     projects: [
       {
-        title: "Transition énergétique",
-        text: "Installations d'énergie renouvelable (solaire, éolienne, biomasse), amélioration de l'efficacité énergétique et projets d'économie circulaire.",
-        icon: <ShieldCheck className="h-6 w-6" />
-      },
-      {
-        title: "Numérisation",
-        text: "Mise en œuvre de solutions numériques, commerce électronique, automatisation des processus et formation aux nouvelles technologies.",
-        icon: <Calculator className="h-6 w-6" />
-      },
-      {
-        title: "Développement économique",
-        text: "Création d'entreprises, amélioration de la compétitivité, tourisme durable et diversification économique.",
+        title: "Subventions pour projets d'investissement entrepreneurial",
+        text: "Subventions pour projets d'investissement entrepreneurial en actifs fixes qui supposent la création d'un nouvel établissement, l'incorporation d'une nouvelle activité pour l'entreprise, une expansion de la capacité productive ou une amélioration du processus productif.",
+        details: "Intensité de l'aide : entre 10 % et 60 %, en fonction de la taille de l'entreprise et du régime européen auquel elle s'inscrit. Montant maximum : 300 000 €. Budget : 22 900 000 €",
         icon: <Building2 className="h-6 w-6" />
       },
       {
-        title: "Services aux citoyens",
-        text: "Amélioration des infrastructures publiques, accessibilité, mobilité durable et services sociaux.",
+        title: "Subventions pour projets de création d'emplois",
+        text: "Subventions pour projets de création d'emplois d'un minimum de 3 nouveaux postes de travail.",
+        details: "Intensité de l'aide : 50 %. Montant maximum : 300 000 €. Budget : 4 000 000 €",
         icon: <Users className="h-6 w-6" />
+      },
+      {
+        title: "Subventions pour projets de croissance et nouvelles opportunités d'affaires",
+        text: "Subventions pour projets de croissance et nouvelles opportunités d'affaires : Ligne changement stratégique, Ligne changement structurel, Ligne attraction de talents.",
+        details: "Intensité de l'aide : entre 10 % et 75 %, en fonction de la typologie de dépense et de la taille d'entreprise. Montant maximum : 31 000 € pour changement stratégique, 210 000 € pour changement structurel et 201 000 € pour attraction de talents. Budget : 1 500 000 €",
+        icon: <Calculator className="h-6 w-6" />
+      },
+      {
+        title: "Subventions pour projets coopératifs",
+        text: "Subventions pour projets coopératifs, entre entreprises et agents de soutien pour améliorer la compétitivité sectorielle.",
+        details: "Intensité de l'aide : 75 %. Montant maximum : 150 000 €. Budget : 2 000 000 €",
+        icon: <ShieldCheck className="h-6 w-6" />
+      },
+      {
+        title: "Subventions pour projets d'entrepreneuriat à haute valeur ajoutée",
+        text: "Subventions pour projets d'entrepreneuriat à haute valeur ajoutée, incluant les actions liées au développement du plan d'affaires de l'entreprise émergente à haute valeur ajoutée dans ses phases initiales.",
+        details: "Intensité de l'aide : 100 %. Montant maximum : 50 000 €. Budget : 600 000 €",
+        icon: <Calculator className="h-6 w-6" />
+      },
+      {
+        title: "Subventions pour projets d'innovation technologique",
+        text: "Subventions pour projets d'innovation technologique, proches du marché, avec risque technologique moyen/faible et courtes périodes de récupération d'investissement (avec TRL 7-9), qui favorisent une transformation technologique, numérique et verte des entreprises.",
+        details: "Intensité de l'aide : 75 %. Montant maximum : 150 000 €. Budget : 4 000 000 €",
+        icon: <Calculator className="h-6 w-6" />
       }
     ],
 
@@ -325,7 +389,7 @@ const nuclearFundCopy = {
   },
   de: {
     heroKicker: "Atomkraftwerksübergangsfonds",
-    heroTitle: "Subventionen für erneuerbare Energie- und Energiewendeprojekte in den Terres de l'Ebre",
+    heroTitle: "Geschäftsprojekte in Kernenergie-Übergangszonen - Terres de l'Ebre",
     heroSubtitle: "Finanzierung für Projekte, die einen fairen Energiewandel und die sozioökonomische Entwicklung in Gebieten fördern, die von der Kernenergieproduktion betroffen sind.",
     heroBadge: "Finanzierung verfügbar 2024-2025",
     ctaPrimary: "Information anfordern",
@@ -543,14 +607,19 @@ export default function NuclearTransitionFundPage() {
               <p className="text-muted-foreground text-lg">{c.projectsIntro}</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
               {c.projects.map((project, idx) => (
                 <div key={idx} className="group p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     {project.icon}
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">{project.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                  <p className="text-muted-foreground leading-relaxed mb-4">{project.description}</p>
+                  {project.details && (
+                    <div className="bg-primary/5 rounded-lg p-4 border-l-4 border-primary">
+                      <p className="text-sm text-muted-foreground leading-relaxed">{project.details}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
