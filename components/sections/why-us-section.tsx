@@ -68,7 +68,7 @@ export function WhyUsSection({ locale }: WhyUsSectionProps) {
             <div className="grid gap-6 mt-8">
               {features.map((feature) => (
                 <div key={feature.title} className="flex gap-4">
-                  <div className="shrink-0 w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-secondary">
+                  <div className="shrink-0 w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-[#ddb042]">
                     {feature.icon}
                   </div>
                   <div>
