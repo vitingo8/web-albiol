@@ -609,5 +609,4 @@ export default function NuclearTransitionFundPage() {
       <WhatsAppButton locale={locale} phoneNumber="34680132404" />
     </div>
   )
-}</contents>
-</xai:function_call">Crear la página completa de Fons Transició Nuclear con toda la información necesaria
+}
