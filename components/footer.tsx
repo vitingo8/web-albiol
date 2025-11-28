@@ -148,7 +148,7 @@ export function Footer({ locale, onLocaleChange }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href="/serveis/autonoms"
+                  href="/serveis/autonomos"
                   className="opacity-80 hover:opacity-100 hover:text-secondary transition-all flex items-center gap-2 group"
                 >
                   <ArrowRight className="h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -183,7 +183,7 @@ export function Footer({ locale, onLocaleChange }: FooterProps) {
                   className="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity"
                 >
                   <Phone className="h-4 w-4 shrink-0 text-secondary" />
-                  <span>977 00 00 00</span>
+                  <span>680.132.404</span>
                 </a>
               </li>
               <li>

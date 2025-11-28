@@ -39,7 +39,7 @@ export function ServicesSection({ locale }: ServicesSectionProps) {
       icon: <Briefcase className="h-6 w-6" />,
       title: t.services.autonoms.title,
       description: t.services.autonoms.desc,
-      href: "/serveis/autonoms",
+      href: "/serveis/autonomos",
     },
     {
       icon: <ClipboardList className="h-6 w-6" />,

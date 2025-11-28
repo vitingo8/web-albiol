@@ -42,7 +42,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
         { name: "Assessoria Fiscal", href: "/serveis/fiscal" },
         { name: "Assessoria Laboral", href: "/serveis/laboral" },
         { name: "Comptabilitat", href: "/serveis/comptable" },
-        { name: "Autònoms", href: "/serveis/autonoms" },
+        { name: "Autònoms", href: "/serveis/autonomos" },
         { name: "Tràmits i Gestoria", href: "/serveis/tramits" },
       ]
     },
@@ -57,7 +57,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
         { name: "Asesoría Fiscal", href: "/serveis/fiscal" },
         { name: "Asesoría Laboral", href: "/serveis/laboral" },
         { name: "Contabilidad", href: "/serveis/comptable" },
-        { name: "Autónomos", href: "/serveis/autonoms" },
+        { name: "Autónomos", href: "/serveis/autonomos" },
         { name: "Trámites y Gestoría", href: "/serveis/tramits" },
       ]
     },
@@ -72,7 +72,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
         { name: "Tax Advisory", href: "/serveis/fiscal" },
         { name: "Labor Advisory", href: "/serveis/laboral" },
         { name: "Accounting", href: "/serveis/comptable" },
-        { name: "Freelancers", href: "/serveis/autonoms" },
+        { name: "Freelancers", href: "/serveis/autonomos" },
         { name: "Admin Procedures", href: "/serveis/tramits" },
       ]
     },
@@ -87,7 +87,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
         { name: "Fiscalité", href: "/serveis/fiscal" },
         { name: "Social", href: "/serveis/laboral" },
         { name: "Comptabilité", href: "/serveis/comptable" },
-        { name: "Indépendants", href: "/serveis/autonoms" },
+        { name: "Indépendants", href: "/serveis/autonomos" },
         { name: "Démarches", href: "/serveis/tramits" },
       ]
     },
@@ -102,7 +102,7 @@ export function Header({ locale, onLocaleChange }: HeaderProps) {
         { name: "Steuern", href: "/serveis/fiscal" },
         { name: "Personal", href: "/serveis/laboral" },
         { name: "Buchhaltung", href: "/serveis/comptable" },
-        { name: "Selbstständige", href: "/serveis/autonoms" },
+        { name: "Selbstständige", href: "/serveis/autonomos" },
         { name: "Behörden", href: "/serveis/tramits" },
       ]
     },
