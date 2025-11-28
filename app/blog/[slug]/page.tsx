@@ -84,7 +84,7 @@ export default function BlogPostPage() {
                 {post.categoryLabel[locale]}
               </span>
 
-              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-balance">
                 {post.title[locale]}
               </h1>
 

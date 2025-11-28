@@ -1,6 +1,4 @@
-import type React from "react"
 import type { Metadata } from "next"
-import ContactClient from "./client"
 
 export const metadata: Metadata = {
   title: "Contactar Gestoria Tortosa | Albiol Consultors | Carrer Argentina 9",
@@ -25,8 +23,4 @@ export const metadata: Metadata = {
     title: "Contactar Gestoria Tortosa | Albiol Consultors",
     description: "Carrer Argentina 9, 2A - Tortosa. Telèfon: 680 132 404",
   },
-}
-
-export default function ContactPage() {
-  return <ContactClient />
 }

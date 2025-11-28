@@ -386,7 +386,7 @@ export default function LaboralServicePage() {
                 <span className="text-xs md:text-sm font-semibold uppercase tracking-wider">{c.heroKicker}</span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold mb-8 text-balance leading-tight">
                 {c.heroTitle}
               </h1>
               

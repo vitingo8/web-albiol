@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import GestoriaOnlineClient from "./client"
 
 export const metadata: Metadata = {
   title: "Gestoria Online Tortosa | Serveis Digitals 24h | Albiol Consultors",
@@ -26,8 +25,3 @@ export const metadata: Metadata = {
     description: "Serveis de gestoria online 24h a Tortosa. Comptabilitat digital sense desplaçaments.",
   },
 }
-
-export default function GestoriaOnlinePage() {
-  return <GestoriaOnlineClient />
-}
-

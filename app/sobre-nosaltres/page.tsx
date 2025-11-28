@@ -137,7 +137,7 @@ export default function AboutPage() {
               <span className="inline-block text-sm font-medium text-secondary uppercase tracking-widest mb-4">
                 {t.about.title}
               </span>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6">{t.about.subtitle}</h1>
+              <h1 className="font-serif text-4xl md:text-5xl font-bold mb-8">{t.about.subtitle}</h1>
               <p className="text-lg text-primary-foreground/80 leading-relaxed">
                 {locale === "ca"
                   ? "Més de 20 anys assessorant empreses, autònoms i particulars a Tortosa i les Terres de l'Ebre. Som el teu soci de confiança per a la gestió integral del teu negoci."

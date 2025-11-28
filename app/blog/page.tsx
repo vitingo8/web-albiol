@@ -53,7 +53,7 @@ export default function BlogPage() {
               <span className="inline-block text-sm font-medium text-secondary uppercase tracking-widest mb-4">
                 Blog
               </span>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6">{t.blog.title}</h1>
+              <h1 className="font-serif text-4xl md:text-5xl font-bold mb-8">{t.blog.title}</h1>
               <p className="text-lg text-primary-foreground/80 leading-relaxed mb-8">{t.blog.subtitle}</p>
 
               <div className="relative max-w-md">
