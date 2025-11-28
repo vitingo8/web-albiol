@@ -7,6 +7,7 @@ import "./globals.css"
 import { Suspense } from "react"
 import { SEO_CONFIG } from "@/config/seo-config"
 import { CriticalCSS } from "@/components/CriticalCSS"
+import { AsyncCSS } from "@/components/AsyncCSS"
 import { ResourcePreloader } from "@/components/ResourcePreloader"
 import { OptimizedAnimations } from "@/components/OptimizedAnimations"
 
@@ -353,6 +354,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <CriticalCSS />
+        <AsyncCSS />
         <ResourcePreloader />
         <OptimizedAnimations />
         <Suspense fallback={null}>{children}</Suspense>

@@ -7,15 +7,15 @@ export function ResourcePreloader() {
   useEffect(() => {
     // Preload de imágenes críticas above-the-fold con WebP
     const criticalImages = [
-      '/professional-office-tortosa-spain-business-meeting.jpg',
-      '/professional-team-meeting-office-modern-collaborat.jpg'
+      '/professional-office-tortosa-spain-business-meeting.webp',
+      '/professional-team-meeting-office-modern-collaborat.webp'
     ]
 
     criticalImages.forEach(src => {
       const link = document.createElement('link')
       link.rel = 'preload'
       link.as = 'image'
-      link.href = src.replace('.jpg', '.webp')
+      link.href = src
       link.type = 'image/webp'
       link.fetchPriority = 'high'
       link.crossOrigin = 'anonymous'

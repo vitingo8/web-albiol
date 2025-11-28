@@ -119,24 +119,33 @@ export function OptimizedImage({
       style={{ width, height }}
     >
       {isInView && (
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          quality={quality}
-          priority={priority}
-          placeholder={placeholder}
-          blurDataURL={blurDataURL}
-          sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
-          loading={loading || (priority ? 'eager' : 'lazy')}
-          onLoad={handleLoad}
-          onError={handleError}
-          className={cn(
-            "transition-opacity duration-300",
-            isLoaded ? "opacity-100" : "opacity-0"
-          )}
-        />
+        <picture>
+          {/* WebP for modern browsers */}
+          <source
+            srcSet={webpSrc}
+            type="image/webp"
+            sizes={sizes}
+          />
+          {/* Fallback to original format */}
+          <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            quality={quality}
+            priority={priority}
+            placeholder={placeholder}
+            blurDataURL={blurDataURL}
+            sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
+            loading={loading || (priority ? 'eager' : 'lazy')}
+            onLoad={handleLoad}
+            onError={handleError}
+            className={cn(
+              "transition-opacity duration-300",
+              isLoaded ? "opacity-100" : "opacity-0"
+            )}
+          />
+        </picture>
       )}
 
       {/* Loading skeleton */}
