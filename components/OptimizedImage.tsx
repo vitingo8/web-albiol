@@ -116,7 +116,11 @@ export function OptimizedImage({
     <div
       ref={imgRef}
       className={cn("relative overflow-hidden", className)}
-      style={{ width, height }}
+      style={{
+        width,
+        height,
+        aspectRatio: `${width} / ${height}` // Previene CLS
+      }}
     >
       {isInView && (
         <picture>
@@ -141,16 +145,33 @@ export function OptimizedImage({
             onLoad={handleLoad}
             onError={handleError}
             className={cn(
-              "transition-opacity duration-300",
+              "transition-opacity duration-300 absolute inset-0 w-full h-full object-cover",
               isLoaded ? "opacity-100" : "opacity-0"
             )}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              position: 'absolute',
+              top: 0,
+              left: 0
+            }}
           />
         </picture>
       )}
 
-      {/* Loading skeleton */}
+      {/* Loading skeleton with fixed dimensions */}
       {!isLoaded && isInView && !priority && (
-        <div className="absolute inset-0 bg-muted animate-pulse" />
+        <div
+          className="absolute inset-0 bg-muted animate-pulse"
+          style={{
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            top: 0,
+            left: 0
+          }}
+        />
       )}
     </div>
   )

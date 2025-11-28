@@ -360,7 +360,10 @@ export default function RootLayout({
                 for (var i = 0; i < links.length; i++) {
                   var link = links[i];
                   var href = link.href || '';
-                  if ((href.indexOf('25864485cc1a6eb7') !== -1 || href.indexOf('d8e14b76c7770c40') !== -1) && href.indexOf('.css') !== -1) {
+                  // Incluir todos los chunks CSS problemáticos
+                  if ((href.indexOf('25864485cc1a6eb7') !== -1 ||
+                       href.indexOf('d8e14b76c7770c40') !== -1 ||
+                       href.indexOf('12629cf7c07110ab') !== -1) && href.indexOf('.css') !== -1) {
                     link.rel = 'preload';
                     link.as = 'style';
                     link.setAttribute('data-fixed', 'true');

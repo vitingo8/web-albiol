@@ -1,48 +1,18 @@
 "use client"
 
-import dynamic from 'next/dynamic'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/sections/hero-section"
+import { ServicesSection } from "@/components/sections/services-section"
+import { StatsSection } from "@/components/sections/stats-section"
+import { WhyUsSection } from "@/components/sections/why-us-section"
+import { SegmentsSection } from "@/components/sections/segments-section"
+import { FaqSection } from "@/components/sections/faq-section"
+import { BlogPreviewSection } from "@/components/sections/blog-preview-section"
+import { TestimonialsSection } from "@/components/sections/testimonials-section"
+import { CtaSection } from "@/components/sections/cta-section"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 import { useLocale } from "@/hooks/use-locale"
-
-// Componentes críticos (above-the-fold) - cargados normalmente
-// Componentes no críticos - cargados de forma lazy para reducir bundle inicial
-const ServicesSection = dynamic(() => import("@/components/sections/services-section").then(mod => ({ default: mod.ServicesSection })), {
-  loading: () => <div className="h-96 bg-muted/30 animate-pulse" />
-})
-
-const StatsSection = dynamic(() => import("@/components/sections/stats-section").then(mod => ({ default: mod.StatsSection })), {
-  loading: () => <div className="h-64 bg-muted/30 animate-pulse" />
-})
-
-const WhyUsSection = dynamic(() => import("@/components/sections/why-us-section").then(mod => ({ default: mod.WhyUsSection })), {
-  loading: () => <div className="h-96 bg-muted/30 animate-pulse" />
-})
-
-const SegmentsSection = dynamic(() => import("@/components/sections/segments-section").then(mod => ({ default: mod.SegmentsSection })), {
-  loading: () => <div className="h-96 bg-muted/30 animate-pulse" />
-})
-
-const FaqSection = dynamic(() => import("@/components/sections/faq-section").then(mod => ({ default: mod.FaqSection })), {
-  loading: () => <div className="h-80 bg-muted/30 animate-pulse" />
-})
-
-const BlogPreviewSection = dynamic(() => import("@/components/sections/blog-preview-section").then(mod => ({ default: mod.BlogPreviewSection })), {
-  loading: () => <div className="h-96 bg-muted/30 animate-pulse" />
-})
-
-const TestimonialsSection = dynamic(() => import("@/components/sections/testimonials-section").then(mod => ({ default: mod.TestimonialsSection })), {
-  loading: () => <div className="h-96 bg-muted/30 animate-pulse" />
-})
-
-const CtaSection = dynamic(() => import("@/components/sections/cta-section").then(mod => ({ default: mod.CtaSection })), {
-  loading: () => <div className="h-64 bg-muted/30 animate-pulse" />
-})
-
-const WhatsAppButton = dynamic(() => import("@/components/whatsapp-button").then(mod => ({ default: mod.WhatsAppButton })), {
-  loading: () => null
-})
 
 export default function HomePage() {
   const [locale, setLocale] = useLocale()
