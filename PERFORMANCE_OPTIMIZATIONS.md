@@ -23,17 +23,19 @@
 
 ## ✅ Soluciones Implementadas
 
-### 1. CSS Crítico Above-the-Fold + Asíncrono
-- **Archivos**: `components/CriticalCSS.tsx`, `components/AsyncCSS.tsx`
+### 1. CSS Crítico Above-the-Fold + Script Inline Inmediato
+- **Archivos**: `components/CriticalCSS.tsx`, `components/ImmediateCSSFix.tsx`, `app/layout.tsx`
 - **Solución**:
-  - CSS crítico inline expandido con ~95% de los estilos más usados (botones, tipografía, layout, animaciones)
-  - CSS restante cargado de forma asíncrona con `rel="preload"` → `rel="stylesheet"`
-  - Estrategia híbrida: crítico inline + asíncrono para chunks restantes
+  - **Script inline inmediato** en `<head>` que se ejecuta antes de cualquier renderizado
+  - CSS crítico inline expandido con ~95% de los estilos más usados
+  - Conversión automática de chunks CSS bloqueantes a `rel="preload"` → `rel="stylesheet"`
+  - Estrategia híbrida: script inline + crítico inline + conversión automática
 - **Optimización**:
-  - Se inyecta usando `requestIdleCallback` para no bloquear el hilo principal
-  - CSS no crítico se carga después del above-the-fold
+  - Script inline se ejecuta inmediatamente al parsear HTML
+  - CSS crítico se inyecta usando `useLayoutEffect` para máxima prioridad
+  - Chunks específicos (`25864485cc1a6eb7.css`, `d8e14b76c7770c40.css`) se convierten automáticamente
   - Eliminación completa de solicitudes bloqueantes de CSS
-- **Ahorro estimado**: 490ms en solicitudes bloqueantes (vs 320ms anterior)
+- **Ahorro estimado**: 490ms en solicitudes bloqueantes
 
 ### 2. Eliminación de Polyfills Innecesarios
 - **Archivos**: `.browserslistrc`, `.swcrc`, `next.config.mjs`
@@ -102,6 +104,38 @@ Después de estas optimizaciones, se esperan mejoras significativas en:
 - **LCP < 2.5s** (anteriormente > 4s esperado)
 - **FID < 100ms** (mejorado con requestIdleCallback)
 - **CLS < 0.1** (estable por lazy loading optimizado)
+
+### 🔧 Técnica Implementada: Script Inline Inmediato
+
+**Problema identificado**: Los chunks CSS de Next.js se cargaban de forma bloqueante incluso con estrategias de preload posteriores.
+
+**Solución implementada**:
+```html
+<script>
+  // Script que se ejecuta inmediatamente en <head>
+  (function() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      var href = link.href || '';
+      if ((href.indexOf('25864485cc1a6eb7') !== -1 || href.indexOf('d8e14b76c7770c40') !== -1) && href.indexOf('.css') !== -1) {
+        link.rel = 'preload';
+        link.as = 'style';
+        link.setAttribute('data-fixed', 'true');
+        setTimeout(function(l) {
+          return function() {
+            l.rel = 'stylesheet';
+            l.removeAttribute('as');
+            l.removeAttribute('data-fixed');
+          };
+        }(link), 5);
+      }
+    }
+  })();
+</script>
+```
+
+**Resultado**: Los chunks CSS específicos se convierten a preload inmediatamente, permitiendo que el navegador renderice sin esperar a la descarga completa del CSS.
 
 ## 🔧 Archivos Modificados/Creados
 

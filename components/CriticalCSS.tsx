@@ -1210,21 +1210,54 @@ const criticalCSS = `
 
 export function CriticalCSS() {
   useEffect(() => {
-    // Usar requestIdleCallback para inyectar CSS crítico cuando el hilo principal esté libre
+    // Inyección inmediata del CSS crítico - más agresiva
     const injectCriticalCSS = () => {
       const style = document.createElement('style')
       style.textContent = criticalCSS
       style.setAttribute('data-critical', 'true')
 
-      // Insertar antes del primer stylesheet existente
-      const firstStylesheet = document.querySelector('link[rel="stylesheet"]')
-      if (firstStylesheet) {
-        firstStylesheet.parentNode?.insertBefore(style, firstStylesheet)
+      // Insertar lo más temprano posible en <head>
+      const head = document.head || document.getElementsByTagName('head')[0]
+      const firstChild = head.firstChild
+
+      if (firstChild) {
+        head.insertBefore(style, firstChild)
       } else {
-        document.head.appendChild(style)
+        head.appendChild(style)
       }
 
-      // Remover después de que el CSS completo se cargue
+      // Convertir chunks CSS bloqueantes a preload inmediatamente
+      const convertCSSLinks = () => {
+        const cssLinks = document.querySelectorAll('link[rel="stylesheet"]')
+
+        cssLinks.forEach((link: Element) => {
+          const htmlLink = link as HTMLLinkElement
+          const href = htmlLink.href
+
+          // Solo procesar chunks CSS de Next.js que no sean críticos
+          if (href.includes('/chunks/') && href.includes('.css') && !htmlLink.hasAttribute('data-critical')) {
+            // Crear preload link inmediatamente
+            const preloadLink = document.createElement('link')
+            preloadLink.rel = 'preload'
+            preloadLink.as = 'style'
+            preloadLink.href = href
+            preloadLink.crossOrigin = 'anonymous'
+
+            // Convertir a stylesheet después de un breve delay
+            setTimeout(() => {
+              preloadLink.rel = 'stylesheet'
+            }, 100)
+
+            // Reemplazar inmediatamente
+            link.parentNode?.replaceChild(preloadLink, link)
+          }
+        })
+      }
+
+      // Ejecutar conversión inmediatamente
+      convertCSSLinks()
+
+      // Cleanup opcional - mantener CSS crítico por más tiempo
       const removeCriticalCSS = () => {
         const criticalStyle = document.querySelector('style[data-critical]')
         if (criticalStyle) {
@@ -1232,17 +1265,12 @@ export function CriticalCSS() {
         }
       }
 
-      // Remover después de 3 segundos o cuando el CSS principal se cargue
-      setTimeout(removeCriticalCSS, 3000)
+      // Mantener por más tiempo para asegurar cobertura
+      setTimeout(removeCriticalCSS, 5000)
     }
 
-    // Ejecutar cuando el navegador esté idle
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(injectCriticalCSS, { timeout: 1000 })
-    } else {
-      // Fallback
-      setTimeout(injectCriticalCSS, 50)
-    }
+    // Ejecutar inmediatamente, no esperar a idle
+    injectCriticalCSS()
 
     // Cleanup
     return () => {

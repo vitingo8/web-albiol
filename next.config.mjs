@@ -28,6 +28,8 @@ const nextConfig = {
       },
     },
   },
+  // Optimización agresiva de CSS para eliminar bloqueos
+  cssMinify: true,
   // Configuración Turbopack compatible
   turbopack: {},
   // Optimizaciones críticas para rendimiento móvil

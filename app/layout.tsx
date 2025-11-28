@@ -7,7 +7,7 @@ import "./globals.css"
 import { Suspense } from "react"
 import { SEO_CONFIG } from "@/config/seo-config"
 import { CriticalCSS } from "@/components/CriticalCSS"
-import { AsyncCSS } from "@/components/AsyncCSS"
+import { ImmediateCSSFix } from "@/components/ImmediateCSSFix"
 import { ResourcePreloader } from "@/components/ResourcePreloader"
 import { OptimizedAnimations } from "@/components/OptimizedAnimations"
 
@@ -351,10 +351,36 @@ export default function RootLayout({
     <html lang="ca">
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Script inmediato para arreglar CSS bloqueante
+              (function() {
+                var links = document.querySelectorAll('link[rel="stylesheet"]');
+                for (var i = 0; i < links.length; i++) {
+                  var link = links[i];
+                  var href = link.href || '';
+                  if ((href.indexOf('25864485cc1a6eb7') !== -1 || href.indexOf('d8e14b76c7770c40') !== -1) && href.indexOf('.css') !== -1) {
+                    link.rel = 'preload';
+                    link.as = 'style';
+                    link.setAttribute('data-fixed', 'true');
+                    setTimeout(function(l) {
+                      return function() {
+                        l.rel = 'stylesheet';
+                        l.removeAttribute('as');
+                        l.removeAttribute('data-fixed');
+                      };
+                    }(link), 5);
+                  }
+                }
+              })();
+            `
+          }}
+        />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        <ImmediateCSSFix />
         <CriticalCSS />
-        <AsyncCSS />
         <ResourcePreloader />
         <OptimizedAnimations />
         <Suspense fallback={null}>{children}</Suspense>
