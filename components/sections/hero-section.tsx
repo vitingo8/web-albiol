@@ -95,7 +95,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
               <Button
                 asChild
                 size="lg"
-                className="h-14 px-8 text-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold rounded-full shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all hover:scale-105"
+                className="h-14 px-8 text-lg bg-[#ddb042] text-slate-950 hover:bg-[#ddb042]/90 font-semibold rounded-full shadow-[0_0_20px_rgba(221,176,66,0.15)] transition-all hover:scale-105"
               >
                 <Link href="/contacte">
                   {c.ctaPrimary}
