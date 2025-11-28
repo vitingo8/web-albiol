@@ -70,12 +70,12 @@ export function StatsSection({ locale }: StatsSectionProps) {
           ]
 
   return (
-    <section className="py-16 bg-primary text-primary-foreground">
+    <section className="py-10 bg-primary text-primary-foreground">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 text-secondary mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 text-[#ddb042] mb-4">
                 {stat.icon}
               </div>
               <div className="font-serif text-4xl md:text-5xl font-bold mb-2">
