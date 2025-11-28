@@ -70,3 +70,4 @@ export function useABTestCTA(variantA: string, variantB: string) {
 
   return selectedVariant === 'a' ? variantA : variantB
 }
+

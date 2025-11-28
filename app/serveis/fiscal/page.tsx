@@ -382,7 +382,7 @@ export default function FiscalServicePage() {
           {/* Fondo abstracto simple para modernidad */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-secondary/20 via-primary to-primary opacity-100" />
           
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md mb-6 border border-white/20">
                 <Calculator className="h-4 w-4 text-secondary" />
@@ -422,7 +422,7 @@ export default function FiscalServicePage() {
 
         {/* FOR WHOM (SEGMENTATION) */}
         <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="text-center max-w-2xl mx-auto mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{c.forWhomTitle}</h2>
             </div>
@@ -442,7 +442,7 @@ export default function FiscalServicePage() {
 
         {/* PAIN POINTS (PROBLEMS) */}
         <section className="py-20 bg-muted/50">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-block px-3 py-1 rounded bg-destructive/10 text-destructive text-sm font-semibold mb-4">
@@ -475,7 +475,7 @@ export default function FiscalServicePage() {
 
         {/* SERVICES (INCLUSIONS) */}
         <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
              <div className="max-w-3xl mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{c.servicesTitle}</h2>
               <p className="text-muted-foreground text-lg">{c.servicesIntro}</p>
@@ -496,7 +496,7 @@ export default function FiscalServicePage() {
 
         {/* PROCESS (ONLINE FACTOR) */}
         <section className="py-20 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">{c.processTitle}</h2>
             </div>
@@ -521,7 +521,7 @@ export default function FiscalServicePage() {
 
         {/* CTA FINAL */}
         <section className="py-24 bg-background">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="bg-muted/40 rounded-3xl p-8 md:p-16 text-center border border-border/50 max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">{c.ctaTitle}</h2>
               <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">{c.ctaText}</p>
@@ -532,7 +532,7 @@ export default function FiscalServicePage() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <div className="flex items-center gap-2 text-muted-foreground mt-4 sm:mt-0 px-4">
+                <div className="flex items-center gap-2 text-muted-foreground mt-4 sm:mt-0 px-6 md:px-8 lg:px-12">
                    <Phone className="h-4 w-4" />
                    <span className="font-medium">680132404</span>
                 </div>

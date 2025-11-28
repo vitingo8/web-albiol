@@ -24,3 +24,4 @@ export const metadata: Metadata = {
     description: "Carrer Argentina 9, 2A - Tortosa. Telèfon: 680 132 404",
   },
 }
+

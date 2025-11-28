@@ -46,3 +46,4 @@ export function Breadcrumb({ items, locale }: BreadcrumbProps) {
     </nav>
   )
 }
+

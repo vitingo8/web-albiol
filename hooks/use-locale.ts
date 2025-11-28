@@ -49,3 +49,4 @@ export function useLocale() {
 
   return [locale, setLocale] as const
 }
+

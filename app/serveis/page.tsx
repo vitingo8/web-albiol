@@ -358,7 +358,7 @@ export default function FiscalServicePage() {
         <section className="py-20 md:py-28 bg-primary text-primary-foreground relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
             <div className="max-w-3xl space-y-6">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-foreground/10 text-xs font-semibold uppercase tracking-[0.18em]">
                 <FileText className="h-3 w-3" />
@@ -398,7 +398,7 @@ export default function FiscalServicePage() {
 
         {/* FOR WHOM */}
         <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="max-w-3xl mb-12">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {c.forWhomTitle}
@@ -423,7 +423,7 @@ export default function FiscalServicePage() {
 
         {/* PROBLEMS */}
         <section className="py-16 md:py-24 bg-muted/40">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="max-w-3xl mb-10">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
                 {c.problemsTitle}
@@ -448,7 +448,7 @@ export default function FiscalServicePage() {
 
         {/* SERVICES INCLUDED */}
         <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="max-w-3xl mb-10">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
                 {c.servicesTitle}
@@ -474,7 +474,7 @@ export default function FiscalServicePage() {
 
         {/* PROCESS */}
         <section className="py-16 md:py-24 bg-muted/40">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="max-w-3xl mb-10">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
                 {c.processTitle}
@@ -501,7 +501,7 @@ export default function FiscalServicePage() {
 
         {/* BENEFITS + ONLINE BANNER */}
         <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4 space-y-12">
+          <div className="container mx-auto px-6 md:px-8 lg:px-12 space-y-12">
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div>
                 <h2 className="font-serif text-3xl font-bold text-foreground mb-4">

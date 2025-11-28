@@ -35,3 +35,4 @@ export function useWebVitals() {
     getTTFB(reportWebVitals)
   }, [])
 }
+

@@ -121,3 +121,4 @@ export const getBusinessSchema = () => ({
     SEO_CONFIG.social.facebook,
   ],
 })
+
