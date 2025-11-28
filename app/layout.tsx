@@ -6,6 +6,8 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import "./globals.css"
 import { Suspense } from "react"
 import { SEO_CONFIG } from "@/config/seo-config"
+import { CriticalCSS } from "@/components/CriticalCSS"
+import { ResourcePreloader } from "@/components/ResourcePreloader"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
@@ -349,6 +351,8 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        <CriticalCSS />
+        <ResourcePreloader />
         <Suspense fallback={null}>{children}</Suspense>
         {process.env.NODE_ENV === "production" && (
           <>

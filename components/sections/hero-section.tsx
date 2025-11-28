@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react"
+import { OptimizedImage } from "@/components/OptimizedImage"
 import type { Locale } from "@/lib/i18n"
 
 const heroContent = {
@@ -132,12 +132,14 @@ export function HeroSection({ locale }: HeroSectionProps) {
           {/* Columna derecha: imagen */}
           <div className="relative h-[500px] lg:h-[650px] w-full hidden lg:block animate-in fade-in slide-in-from-right-12 duration-1000 delay-200">
             <div className="absolute inset-0 bg-card rounded-[30px_30px_200px_30px] overflow-hidden border border-border/50 shadow-2xl">
-              <Image
+              <OptimizedImage
                 src="/professional-office-tortosa-spain-business-meeting.jpg"
                 alt="Equip Albiol Consultors"
-                fill
-                className="object-cover opacity-90 hover:scale-105 transition-transform duration-[2s]"
+                width={650}
+                height={650}
+                className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-[2s]"
                 priority
+                sizes="(max-width: 1024px) 100vw, 650px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
             </div>

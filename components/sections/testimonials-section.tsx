@@ -101,10 +101,7 @@ export function TestimonialsSection({ locale }: TestimonialsSectionProps) {
         </div>
 
         <div className="relative">
-          {/* Large quote icon */}
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 opacity-5">
-            <Quote className="h-32 w-32 text-primary" />
-          </div>
+          {/* Large quote icon - removed for DOM optimization */}
 
           {/* Mobile: Single card with navigation */}
           <div className="md:hidden">
