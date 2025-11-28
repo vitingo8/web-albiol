@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import {
   Laptop,
   CheckCircle2,
@@ -286,10 +287,13 @@ export default function GestoriaOnlineClient() {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
                    {/* Imagen de un profesional trabajando relajado/elegante */}
                    <div className="aspect-[4/3] bg-slate-200 relative">
-                      <img
+                      <Image
                         src="/professional-business-man-portrait-office.jpg"
                         alt="Asesor Online"
+                        width={400}
+                        height={533}
                         className="object-cover w-full h-full"
+                        priority={false}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
                    </div>

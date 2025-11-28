@@ -7,6 +7,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Award, Users, Heart, Target, MapPin, Calendar, Linkedin } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import type { Locale } from "@/lib/i18n"
 import { getTranslation } from "@/lib/i18n"
 
@@ -200,10 +201,13 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="aspect-square rounded-2xl overflow-hidden bg-muted">
-                <img
+                <Image
                   src="/modern-office-interior-professional-workspace.jpg"
                   alt="Albiol Consultors office"
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover"
+                  priority={false}
                 />
               </div>
             </div>

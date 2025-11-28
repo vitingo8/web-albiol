@@ -1,4 +1,5 @@
 import { MapPin, Laptop, MessageCircle, Award } from "lucide-react"
+import Image from "next/image"
 import type { Locale } from "@/lib/i18n"
 import { getTranslation } from "@/lib/i18n"
 
@@ -39,10 +40,13 @@ export function WhyUsSection({ locale }: WhyUsSectionProps) {
           {/* Left Column - Image */}
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-              <img
+              <Image
                 src="/professional-team-meeting-office-modern-collaborat.jpg"
                 alt="Albiol Consultors team"
+                width={528}
+                height={528}
                 className="w-full h-full object-cover"
+                priority={false}
               />
             </div>
             {/* Floating Card */}

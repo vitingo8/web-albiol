@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Building2, User, Users, ArrowRight } from "lucide-react"
+import Image from "next/image"
 import type { Locale } from "@/lib/i18n"
 import { getTranslation } from "@/lib/i18n"
 
@@ -56,10 +57,13 @@ export function SegmentsSection({ locale }: SegmentsSectionProps) {
             >
               {/* Image */}
               <div className="aspect-video overflow-hidden">
-                <img
+                <Image
                   src={segment.image || "/placeholder.svg"}
                   alt={segment.title}
+                  width={371}
+                  height={371}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  priority={false}
                 />
               </div>
 

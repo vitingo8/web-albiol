@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -121,10 +122,12 @@ export default function LoginPage() {
       <div className="hidden lg:flex w-1/2 bg-slate-900 relative items-center justify-center text-white overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-           <img 
-             src="/professional-office-tortosa-spain-business-meeting.jpg" 
-             alt="Office" 
-             className="w-full h-full object-cover opacity-20 scale-105"
+           <Image
+             src="/professional-office-tortosa-spain-business-meeting.jpg"
+             alt="Office"
+             fill
+             className="object-cover opacity-20 scale-105"
+             priority={false}
            />
            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/90 to-blue-900/40" />
         </div>
