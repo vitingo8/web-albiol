@@ -536,7 +536,9 @@ export default function NuclearTransitionFundPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-secondary/20 via-primary to-primary opacity-100" />
 
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              {/* Columna izquierda: texto */}
+              <div className="max-w-2xl lg:pl-4 xl:pl-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md mb-6 border border-white/20">
                 <ShieldCheck className="h-4 w-4 text-secondary" />
                 <span className="text-xs md:text-sm font-semibold uppercase tracking-wider">{c.heroKicker}</span>
@@ -580,6 +582,18 @@ export default function NuclearTransitionFundPage() {
                     <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
                     <span className="text-primary-foreground font-medium">Te ayudamos a poner tu centro de Trabajo en Zonas Penta</span>
                   </div>
+                </div>
+              </div>
+
+              {/* Columna derecha: imagen */}
+              <div className="relative h-[400px] lg:h-[500px] w-full hidden lg:block animate-in fade-in slide-in-from-right-12 duration-1000 delay-200">
+                <div className="absolute inset-0 bg-card rounded-[30px_30px_200px_30px] overflow-hidden border border-border/50 shadow-2xl">
+                  <img
+                    src="/FTN.jpg"
+                    alt="Fons Transició Nuclear - Zones afectades"
+                    className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-[2s]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
                 </div>
               </div>
             </div>
